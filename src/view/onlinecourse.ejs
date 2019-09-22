@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Online Course | AINJ IT SERVICES PVT LTD</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<!-- Slick -->
+	<link type="text/css" rel="stylesheet" href="css/slick.css" />
+	<link type="text/css" rel="stylesheet" href="css/slick-theme.css" />
+
+	<!-- nouislider -->
+	<link type="text/css" rel="stylesheet" href="css/nouislider.min.css" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+	
+
+</head>
+
+<body>
+	<!-- HEADER -->
+	<header>
+		<!-- top Header -->
+		<div id="top-header">
+			<div class="container">
+				<div class="pull-left">
+					<span>Welcome to AINJ IT SERVICES PVT LTD!</span>
+				</div>
+				<div class="pull-right">
+					<ul class="header-top-links">
+						
+						<li><a href="#">Newsletter</a></li>
+						<li><a href="faq.html">FAQ</a></li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- /top Header -->
+
+		<!-- header -->
+		<div id="header">
+			<div class="container">
+				<div class="pull-left">
+					<!-- Logo -->
+					<div class="header-logo">
+						<a class="logo" href="index1.html">
+							<img src="./img/ainjlogo.png" alt="">
+						</a>
+					</div>
+					<!-- /Logo -->
+
+					<!-- Search -->
+					<div class="header-search">
+						<form method="get" action="/show-course">
+							<input class="input search-input" type="text" placeholder="Enter your keyword" name="search">
+							<!-- <select class="input search-categories">
+								<option value="0">All Services</option>
+								<option value="1">AINJ IT SERVICES</option>
+								<option value="1">AINJ INFOTECH SERVICES</option>
+								<option value="1">CONSULTANCY</option>
+								<option value="1">DIGITAL MARKETING</option>
+							</select> -->
+							<button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+						</form>
+					</div>
+					<!-- /Search -->
+				</div>
+				<div class="pull-right">
+					<ul class="header-btns">
+						<!-- Account -->
+						<li class="header-account dropdown default-dropdown">
+							<div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+								<div class="header-btns-icon">
+									<i class="fa fa-user-o"></i>
+								</div>
+								<%var session %>
+								<%var courses %>
+								<strong class="text-uppercase">Welcome <%= session.user %><i class="fa fa-caret-down"></i></strong>
+							</div>
+							<a href="login.html" class="text-uppercase">Login</a> / <a href="signup.html" class="text-uppercase">Join</a>
+							<ul class="custom-menu">
+								<li><a href="#"><i class="fa fa-user-o"></i> Welcome <%= session.user %></a></li>
+								<li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
+								
+								<li><a href="/cart-course/"><i class="fa fa-check"></i> Checkout</a></li>
+								<li><a href="login.html"><i class="fa fa-unlock-alt"></i> Login</a></li>
+								<li><a href="/logout"><i class="fa fa-unlock-alt"></i> Logout</a></li>
+								<li><a href="signup.html"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+							</ul>
+						</li>
+						<!-- /Account -->
+
+						<!-- Cart -->
+						<li class="header-cart dropdown default-dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+								<div class="header-btns-icon">
+									<i class="fa fa-shopping-cart"></i>
+									<span class="qty"><% if (session.cart) { %>
+										<%= session.cart.totalItems %>
+										<% }else{ %>0
+										<% }%>
+									</span>
+								</div>
+								<strong class="text-uppercase">My Cart:</strong>
+								<br>
+								<span>Rs.<% if (session.cart) { %>
+										<%= session.cart.totalPrice %>
+										<% }else{ %>0
+										<% }%></span>
+							</a>
+							<div class="custom-menu">
+								<div id="shopping-cart">
+									<div class="shopping-cart-list">
+										
+										<div class="product product-widget">
+											<div class="product-thumb">
+												<img src="./img/thumb-product01.jpg" alt="">
+											</div>
+											
+											<button class="cancel-btn"><i class="fa fa-trash"></i></button>
+										</div>
+
+									</div>
+									<div class="shopping-cart-btns">
+										<!-- <button class="main-btn">View Cart</button> -->
+										<a href="/cart-course/" class="primary-btn">Checkout <i class="fa fa-arrow-circle-right"></i></a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<!-- /Cart -->
+
+						<!-- Mobile nav toggle-->
+						<li class="nav-toggle">
+							<button class="nav-toggle-btn main-btn icon-btn"><i class="fa fa-bars"></i></button>
+						</li>
+						<!-- / Mobile nav toggle -->
+					</ul>
+				</div>
+			</div>
+			<!-- header -->
+		</div>
+		<!-- container -->
+	</header>
+	<!-- /HEADER -->
+
+	<!-- NAVIGATION -->
+	<div id="navigation">
+		<!-- container -->
+		<div class="container">
+			<div id="responsive-nav">
+				<!-- category nav -->
+				<div class="category-nav show-on-click">
+					<span class="category-header">Services <i class="fa fa-list"></i></span>
+					<ul class="category-list">
+						<li class="dropdown side-dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">IT Services <i class="fa fa-angle-right"></i></a>
+							<div class="custom-menu">
+								<div class="row">
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Services</h3></li>
+											<li><a href="/show-prod">Online Sale</a></li>
+											<li><a href="freelancing.html">Freelancing</a></li>
+											<li><a href="/show-freelance-job">View Freelance Jobs</a></li>
+											<li><a href="#">Reseller Hosting</a></li>
+											<li><a href="#">ERP</a></li>
+										<!--	<li><a href="#">Bags & Shoes</a></li> -->
+										</ul>
+										<hr class="hidden-md hidden-lg">
+									</div>
+									
+									
+								</div>
+								
+							</div>
+						</li>
+						
+						<li class="dropdown side-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Infotech Services <i class="fa fa-angle-right"></i></a>
+							<div class="custom-menu">
+								<div class="row">
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Services</h3></li>
+											<li><a href="/show-course">Online Courses</a></li>
+											<li><a href="internshipdetails.html">Online Internship</a></li>
+											<li><a href="/show-colpro">Online College Project</a></li>
+											
+										</ul> 
+										
+										
+									</div>
+									
+									
+								</div>
+							</div>
+						</li>
+						
+						<li class="dropdown side-dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Job Consultancy <i class="fa fa-angle-right"></i></a>
+							<div class="custom-menu">
+								<div class="row">
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Services</h3></li>
+											<li><a href="/show-job">Job Openings</a></li>
+											<li><a href="signup.html">Registration for Online Placement Services</a></li>
+											<li><a href="/show-resumes-cust">Our Services</a></li>
+										</ul>
+										
+										
+										
+									</div>
+									
+									
+								</div>
+							</div>
+						</li>
+						
+						<li class="dropdown side-dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Digital Marketing <i class="fa fa-angle-right"></i></a>
+							<div class="custom-menu">
+								<div class="row">
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li><h3 class="list-links-title">Services</h3></li>
+											<li><a href="/dmpage">Offers</a></li>
+											<li><a href="packages.html">Packages</a></li>
+											
+										
+										</ul>
+										
+										
+										
+									</div>
+									
+									
+								</div>
+							</div>
+						</li>
+						<li><a href="/show-blogs-cust">Blog</a></li>
+						<li><a href="#">SMS</a></li>
+						<li><a href="signup.html">Sign Up</a></li>
+						
+					</ul>
+				</div>
+				<!-- /category nav -->
+
+				<!-- menu nav -->
+				<div class="menu-nav">
+					<span class="menu-header">Menu <i class="fa fa-bars"></i></span>
+					<ul class="menu-list">
+						<li><a href="index1.html">Home</a></li>
+						<li><a href="gallery.html">Gallery</a></li>
+						<li><a href="#">SMS</a></li>
+						<li><a href="/show-blogs-cust">Blog</a></li>
+						<li><a href="contact.html">Contact</a></li>
+						
+						
+					</ul>
+				</div>
+				<!-- menu nav -->
+			</div>
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /NAVIGATION -->
+
+	<!-- BREADCRUMB -->
+	<div id="breadcrumb">
+		<div class="container">
+			<ul class="breadcrumb">
+				<li><a href="index1.html">Home</a></li>
+				<li class="active">Online Courses</li>
+			</ul>
+		</div>
+	</div>
+	<div class="container">
+	<div><p></br>We give training of all types of technical courses 
+								here. After completeion of course we provide certificate, also PLACEMENT in reputed companies.</p>
+							<a href="#bit1">	<input type="button" class="button" value="Courses"></a>&nbsp;&nbsp;
+							<a href="#bit2">	<input type="button" class="button" value="Syllabus"></a>&nbsp;&nbsp;
+							<a href="#bit3">	<input type="button" class="button" value="Interview Questions"></a>&nbsp;&nbsp;
+							<a href="/show-colpro">	<input type="button" class="button" value="Online College Project"></a>&nbsp;&nbsp;</br>
+</br></br>
+
+<div class="container">
+<h2>Latest Course list from AINJ</h2>
+			<!-- List of job openings come here which is shown to students -->
+			<% if (courses) { %>
+				<table>
+					<th>ID</th>
+					<th>Course Name</th>
+					<th>Course Duration</th>
+					<th>Course Fees</th>
+					<th>Course File</th>
+					
+					<th>Add to cart</th>
+					<th>Buy</th>
+
+					<% courses.forEach(function(course) { %>
+			        	<tr>
+			        		<td><%= course.id %></td>
+			        		<td><%= course.cname %></td>
+			        		<td><%= course.cduration %></td>
+			        		<td><%= course.cfees %></td>
+			        		<td><%= course.cfile %></td>
+			        		<td><a href="/add-to-cart-course/<%= course.id %>" class="primary-btn">Add to Cart</a></td>
+			        		<td><a href="#" class="primary-btn">Buy Now</a></td>
+			        	</tr>
+			    	<% }); %>
+				</table>
+			<% } else { %>
+		        <p class="text-center">Job Not Found.</p>
+		    <% } %>
+		</br>
+</div>
+
+
+
+<script src="js/cbpFWTabs.js"></script>
+<script>
+new CBPFWTabs( document.getElementById( 'tabs' ) );
+</script></br>
+<div class="main" id=bit2>
+
+
+<h3 class="inner-tittle two">Course Syllabus </h3>
+<div class="graph"> <div class="tabs">
+ <nav class="second"><h3> <b><a>Java, C ,C++ ,C# ,Android Programming, PHP, Python, Software Testing, Asp.net, Networking, Hadoop.</a> </nav></b></h3>
+<div class="container">
+	<div class="para">
+
+ <div class="row">
+<div class="column" style="background-color:#fff;">
+   <p><b> <h3>CORE JAVA</h3></b>
+    <ul class="a"><li>Introduction </li>
+	<li>Language Fundamentals</li>
+<li>Object Oriented Programming</li>
+<li>Packages</li>
+	<li>Exception Handling</li>
+	<li>Multi Threading</li>
+	<li>Input/Output Operation in Java(java.io Package)</li>
+	<li>GUI Programming</li>
+	<li>APPLETS</li>
+	<li>Collections Framework & Utility Classes </li>
+	<li>Generics
+<li>	Java SE 6.x/ 7.x Features</li>
+
+  </div>
+  <div class="column" style="background-color:#fff;">
+  <p>  <h3>ADVANCE JAVA</h3>
+    <ul class="a">  
+    <li>Networking using Java</li>
+	<li>SWINGS</li>
+	<li>Database Programming using JDBC</li>
+	<li>Servlets</li>
+	<li>Java Beans</li>
+	<li>Java Server Pages</li>
+	<li>Distributed Applications</li>
+	<li>Java Messaging Service [JMS] </li>
+	<li>XML	Java Mail API </li>
+	<li>AJAX </li>
+	<li>Java Server Faces</li>
+	<li>ANT, Maven, Junit, Log4J</li></ul>
+			 
+  </div>
+  <div class="column" style="background-color:#fff;">
+  <p>  <h3>JAVA EE</h3>
+     <ul class="a"><li>	Struts</li>
+<li>Hibernate</li>
+<li>	Web Services</li>
+<li>	Spring Framework </li>
+  </div>
+  </ul></div></p>
+ </div></li></ul></div>
+
+ <div class="container">
+ 	<div class="para">
+ <div class="context">
+<div class="main" id="section2">
+  
+<div class="row">
+  <div class="column" style="background-color:#fff;">
+  <p>  <h3> C Syllabus</h3>
+	<ul class="a"> 	<li>	 Introduction	</li>
+	<li> Decision Making & Looping</li>	
+	 <li> Operators & Expressions	</li>
+	<li> User Defined Functions</li> 
+ <li>Pointers	</li>
+	<li> Arrays & Strings	</li> 
+	 <li>Constants, Variables & Datatypes	</li>
+	<li>Structures & Unions</li></ul>  
+  </div>
+  <div class="column" style="background-color:#fff;">
+   <p> <h3>C++ Syllabus</h3>
+	<ul class="a"><li> Introduction</li>
+<li> Classes & Objects</li>
+<li>	 Operators & Expressions</li>
+<li> Operator Overloading</li>
+<li>	 Virtuals Functions & Polymorphism</li>
+<li> Exception Handling</li>
+<li>	 Variables & Data Types</li>
+<li>	Functions in C++</li>
+<li>	Constructors & Destructors</li>
+<li>	Inheritance</li>
+<li>	Manipulating Strings</li></ul>
+   
+  </div>
+  <div class="column" style="background-color:#fff;">
+   <p> <h3>C# Syllabus</h3>
+	 <ul class="a">	<li> Introduction</li>
+<li> C# .NET: Variables </li>
+<li>	 Conditional Statement</li>
+<li> Looping Statement</li>
+<li> Add Menus to your Forms</li>
+<li>Debugging your Applications</li>
+<li>	 Methods</li>
+<li>	 Arrays </li>
+<li>String Manipulation</li>
+<li>	Events</li>
+<li>Classes and Objects</li>
+<li>Manipulating Files </li>
+<li>Databases</li>
+
+    
+  </div>
+</div></p></div>
+ </div></div>
+ <div class="container">
+ 	 <div class="para">
+ <div class="context">
+  <div class="main" id="section3">
+   <p><h3>Android Progamming</h3></p>
+					<div class="row">
+  <div class="column" style="background-color:#fff;">
+    <h3>Core java</h3>
+    <ul class="a">	<li>Introduction </li>
+	<li>Language Fundamentals</li>
+<li>	Object Oriented Programming</li>
+<li>	Packages</li>
+<li>	Exception Handling</li>
+<li>Multi Threading</li>
+<li>Input/Output Operation in Java</li>
+<li>	GUI Programming</li>
+<li>	APPLETS</li>
+<li>Collections Framework & Utility Classes </li>
+<li>	Annotations </li></li>
+<li>	Reflection</li>
+<li>Java SE 6.x/ 7.x Features</li>
+
+  </div>
+  <div class="column" style="background-color:#fff;">
+   <h3> Iphone App Development</h3>
+				 
+	<ul class="a">
+<li>Introduction to Android</li> 	
+<li>Fundamentals </li>
+<li>Application Structure</li>
+<li>Emulator</li>
+<li>Intents</li>	 
+<li>Basic UI design, Styles & Themes </li>
+<li>Menu</li> 
+<li>Adapters</li>
+<li>Notifications</li>
+<li>Customize</li>
+<li>Fragments</li>
+<li>LIVE PROJECT</li>
+</ul>
+ 
+ 
+  </div></p> </div>
+ </div></ul></div>
+																							 
+		</br>
+		<div class="container">																					 
+	 <div class="context">
+	 <div class="main" id="section4">
+	
+	<div class="row">
+		<h3> PHP Syllabus</h3>
+    <div class="column" style="background-color:#fff;">
+     <h3> PHP</h3>
+	<ul class="a"> <li>introduction</li>	
+	<li> Evaluation of PHP  </li>
+	<li> Defining Variable and Constant</li>
+ <li>Php Data type </li>
+ <li>Operators </li>
+ <li>Handling Html Form With PHP </li>
+  <li>Decisions and loop</li>
+    <li>Function,String</li>
+
+
+ <li>String matching with regular</li>
+<li>Database Connectivity with </li> 
+  </div>
+  <div class="column" style="background-color:#fff;">
+   <h3>Advance PHP</h3>
+	<ul class="a"><li> Introduction</li> 
+<li>Objects </li> 
+<li>Declaring a class</li> 
+	<li>The new keyword and constructor</li> 
+	<li>Destructor</li> 
+	<li>Access method and properties using $this variable</li> 
+
+<li>Public ,private, protected properties and methods </li> 
+<li>Static properties and method</li> 
+	<li>Class constant </li> 
+<li>Inheritance & code reusability</li> 
+<li>Polymorphism </li> 
+<li>Parent:: & self:: keyword </li> 
+<li> Abstract method and class</li> 
+<li>Interface </li> 
+<li>Final </li> </div></ul>
+   
+  </div>
+</ul></div></div></p>
+ 
+</div></div>	
+</div>
+ </div></ul></div>
+ <div class="container">
+ 	<div class ="para">
+																							  
+ <div class="context">
+  <div class="main" id="section2">
+  	<br>	<br>
+	<br><p><b><h3>Python Syllabus</h3></b>
+		<div class="row">
+  <div class="column" style="background-color:#fff;">
+    <ul class="a">
+ <li>Introduction To Python</li> 
+ <li>Python Data Types</li> 
+ <li>Python Program Flow Control </li> 
+<li> Python Functions, Modules And Packages </li> 
+<li>Python String, List And Dictionary Manipulations </li> 
+<li> Python File Operation </li> 
+<li>Python Object Oriented Programming – Oops </li> 
+<li>Python Regular Expression </li> 
+<li>Python Exception Handling </li> 
+<li> Python Database Interaction  </li> 
+<li>  Python Multithreading </li> 
+<li>Sample Project</li> 
+</ul>
+</div></div></p>
+</div>
+
+</div>
+ </div>
+</div>
+</div>
+	<div class="container">	
+	<div class="para">																					  
+  <div class="context">
+	<div class="main" id="section2">
+		
+		<div class="row">
+			 <h3>Testing Syllabus</h3>
+  <div class="column" style="background-color:#fff;">
+  
+   <h3>Manual Testing</h3>		 				
+<ul class="a"><li>	Testing Overview
+<li>	SDLC</li> 
+<li>	STLC</li> 
+<li>	Methods of testing</li> 
+<li>	Validation</li> 
+<li>	Types of Testing</li> 
+<li>	Verification</li> 
+<li>	Walk through, inspection and Review	V Model</li> 
+<li>Special Tests: Requirement, Installation, UI, Usability, Internationalization, Localization, Performance, Load, Stress and many more</li> 
+<li>	Test plan</li> 
+<li>	Test Case Design Methods</li> 
+<li>	Writing and Reviewing Test Cases<</li> 
+<li>	Test Execution</li> 
+<li>	Defect Management</li> 
+  </div>
+  <div class="column" style="background-color:#fff;">
+ <h3>Automated Testing</h3>
+	<ul class="a">			 
+	<li>Role of tools in testing</li> 	
+	<li>Using software testing tools	</li> 
+
+	<li>Role of tools in testing</li> 
+	<li>Using software testing tools</li> 
+	<li>Users, Roles and Permissions</li> 
+    <li>Managing project, Modules and Sub modules	</li> 
+   <li>Creating test plan, test cases</li> 	
+	<li>Execution of Test cases	</li> 	
+	<li>Bugzilla	</li> 
+	<li>Life Cycle</li> 	
+	<li>Users, Roles and Permissions</li> 
+	<li>Managing project, Modules and Submodules</li> 	
+	<li>Logging and resolving a bug	</li> 	</li> 
+	<li>Keywords, Search functionality	</li>  </ul></div></li></ul></div></div></p>
+
+  </div>
+  
+</div>
+	  </div></br></br></br>
+																							  
+		  <div class="context">
+		  	<div class="para">
+					  <div class="main" id="section2">
+									<p><b><h3>.Net Syllabus</h3></b>
+										 <div class="row">
+  <div class="column" style="background-color:#fff;">
+    	<h3>Asp.Net</h3>
+				 
+<ul class="a">	
+	<li>Intro To Web Technologies </li>  
+	<li>Asp.Net Intro</li>  
+	<li>Server Side Controls</li>  
+	<li>Theme And Skin</li>  
+	<li>State Management </li>  
+	<li>Ado.Net</li>  
+	<li>Linq</li>  
+	<li>Caching</li>  
+	<li>Asp.Net Configuration</li>  
+	<li>Asp.Net Tracing</li>  
+	<li>E-Mail Server</li>  
+	<li>Security In Asp.Net	</li>  
+	<li>Xml Web Services</li>  
+	<li>Wcf</li>  
+    <li>Web Parts</li>  
+	<li>Asp.Net Ajax</li>  
+
+	<li>Silverlight</li>  
+
+	<li>Site Navigation</li>  
+ 
+	<li>Introduction To Sharepoint</li>  </ul>
+
+  </div>
+  <div class="column" style="background-color:#fff;">
+   <h3> 	C#.Net</h3>
+				 
+	<ul class="a"><li>.Net Enterprise Architecture 4.0</li>  </li>  	
+	<li>C#.Net Language Basics </li>  </li>  	
+	<li>Objects Oriented Programming </li>  </li>  
+	<li>Memory Management</li>   
+	<li>Exception Handling </li>  
+	<li>Operator Overloading </li>  
+	<li>Gui Application Development </li>  
+	<li>Data Base Programming (Ado.Net) </li>  
+	<li>Assemblies 	Delegates </li>  
+	<li>User Controls And Event HaPointers Distributed Technologies & .Net Remoting </li>  
+	<li>File Handling </li>  
+	<li>Windows Services </li>  	
+	<li>Wpf Programming </li>  
+	<li>Multi Threading </li>  </li>  
+	<li>Security In .Net </li>  </li></ul>  
+
+  </div>
+  <div class="column" style="background-color:#fff;">
+  	<h3> 	Vb.Net</h3>
+				 
+	<ul class="a">	<li>Introduction	</li>   
+	<li>Vb.Net And C# Comparison </li>   
+	<li>Interoperability With Computer  </li>  
+	<li>Crystal Reports </li>  
+	<li>Localization And Globalization </li>  
+	<li>Speech Translation</li>  </ul>
+<br>
+<h3>  	Advanced .NET 4.0</h3>
+				 
+	<ul class="a"><li>Web-services: Concept and Implementation </li>  
+	<li>Concept of Ajax, .NET Ajax Toolkit </li>  
+	<li>Using Silverlight</li>  
+	<li>Windows Presentation Foundation</li>  
+	<li>Windows Communication Foundation</li>  
+	<li>Workflow Foundation</li>  </ul>
+  </div>
+</div></div>
+		 </div></br></br></br></p></div></div></div>
+	
+
+
+
+
+	</br></br>	</br>	</br>	</br>		
+	<div class="container">
+	 <div class="context">
+	 	<div class="para"><p>
+		  <div class="main" id="section2">
+					<b><p><h3>Networking Syllabus</h3></p></b>
+																							
+
+
+<div class="row">
+  <div class="column" style="background-color:#fff;">
+    <h3><b>Basic Hardware</b></h3>				
+  	 
+	<ul class="a">Basic Electronic circuits
+	<li>Identify different computer peripherals  </li> 	
+<li>(Computer Fundamentals, Input Output Devices, Microprocessor, Hard Disk Drive, Memory, Power Supply, Motherboard, Computer Maintenance, Slots & Connectors, etc..) </li> 
+ 	<li>Install and configure different hardware resources
+		(Operating System, Driver Installation, Computer Assembly, etc..)	 </li> 
+	<li>Installation and troubleshooting Computer Peripherals</li>
+ 	<li>(Processors, Memory, Motherboards, SMPS, Storage systems (IDE and SATA), Display devices and graphics card, li>Storage system – removable(CD/DVD/Blue Ray), Peripherals and input devices (Mouse, Keyboard, Scanners, Printers)etc.. </li> 
+ 	<li>Assembling, disassembling and troubleshooting  </li> 
+	<li>Assembling and troubleshooting a personal computer </li> 
+	 <li>Installing, configuring operating system, device driver and Application program  </li> 
+	<li>Installing Operating System and device drivers  </li> 
+	<li>Laptop maintenance and their troubles </li> 
+	 <li>Preventive maintenance of all the components of a computer </li> 
+	<li>Gaming PCs and Server  </li> </br>
+
+  </div>
+  <div class="column" style="background-color:#fff;">
+  <h3><b>Basic Networking</b></h3>
+				 
+				<ul class="a">
+	<li>Networking Fundamentals</li>
+	<li>Topology </li> 
+	<li>Media Standard </li> 
+	<li>Media Characteristic </li> 
+	<li>Various Wireless Technol> </li> 
+	<li>Internet Addressing </li> 
+	<li>Identifying Type of Internet Addressing – static , dynamic  </li> 
+	<li>OSI Reference Model </li> 
+	<li>Differentiate between the following network protocols in terms of routing, addressing schemes
+	 </li> Interoperability and naming Conventions </li> 
+	<li>Purpose , functionality of the following protocols used in the TCP/IP suite </li> 
+	<li>Explaining Various Switching Technology </li> 
+	<li>An Overview of Network Management System </li> 
+	<li>Identifying Network Need </li> 
+	<li>Incorporating Network Redundancy </li> 
+	<li>An Overview of Network Management System </li>  </li>  </li> 
+	<li>Basics of Network Operating System </li>  </li>  </li> 
+	<li>Devices </li>  </li> 
+	<li>Creating LAN </li>  </li> 
+	<li>Using TCP/IP Service </li>  </li>  
+	<li>Using TCP/IP Utilitie </li>  </li> 
+	<li>Installing and Configuring TCP/IP </li> 
+	<li>Identify different computer LAN Components </li>  </li>  </ul>
+(1)	Install and configure different Essential LAN Components 
+(2)	Design Networks and Cabling 
+(3)	Troubleshoot Basic Network Issues  
+(4)	Installing, configuring Network Operating System 
+(5)	Install Network Server-Client computers
+
+ 
+  </div>
+  <div class="column" style="background-color:#fff;">
+   <h3> <b>Windows Server 2008 Administration</b></h3>
+				 
+	<ul class="a">	<li>	Installing Microsoft Windows Server 2008 Configuring print services </li> 	
+<li>	Configuring file services </li> 	
+	<li>Maintaining Windows Server 2008 file services </li> 	
+	<li>Using terminal services gateway </li>  
+	<li>Configuring Routing and Remote Access and wireless networking  </li> 
+	<li>Monitoring servers </li> 
+	<li>Maintaining and updating Windows Server 2008  </li> 
+	<li>Overview of active directory domain services </li> 
+	<li>Implementing active directory	 </li> 
+	<li>Configuring and managing the DNS Server role </li> 
+	<li>Configuring and managing the DHCP Server role  </li> 	
+	<li>Working with active directory sites </li> 
+	<li>Global catalog and FSMO roles </li> 	
+	<li>Security Planning and Administrative Delegation </li> 
+	<li>Active Directory Administration  </li> 
+	<li>Maintaining network health </li> 	
+	<li>Introduction to group policy  </li> 
+	<li>Active directory maintenance </li> 
+	<li>Configuring environment using group policy </li> 
+	<li>Performing software installation using group policy  </li> 
+	<li>Backing up ooting and Disaster Recovery (DR) </li> </ul>
+
+  </div>
+</div></p></div>
+						</div></br></br></br></br></br></br></br></br></br>	</br>	</br>	</br>		</br></br></br>	</br>	</br>		
+																							  
+		<div class="context">
+			<div class="para">
+				<p>  <div class="main" id="section2">
+					</br></br></br><b><p><h3>Hadoop Syllabus</h3></p></b>
+					  <div class="row">
+  <div class="column" style="background-color:#fff;">
+   <ul class="a"><li>   Introduction to Big Data </li>  
+ <li>Hadoop Architecture and HDFS </li>  </li> 
+<li> Hadoop Clusters and the Hadoop Ecosystem  </li>  
+<li>Hadoop MapReduce Framework </li>  </li> 
+<li> MapReduce programs in Java  </li> 
+<li>Hive and HiveQL </li>
+ <li>NoSQL Databases </li>
+ <li> Oozie and Zookeeper
+ </li>  </ul>
+
+  </div>
+  </div>
+  </div>
+</div>
+</div></div>
+</div>
+</div>
+																							  
+</p>																						 
+																							
+</div>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<h2>Diploma in Embedded Systems Design</h2>
+<h3>Course Contents</h3>
+<ul>
+	<li>Hardware Design</li>
+	<li>Digital electronics</li>
+    <li>Electronic circuit design</li>
+	<li>Embedded Computer Architecture</li>
+	<li>Multi-core architectures</li>
+	<li>8051 Microcontrollers</li>
+	<li>PIC Microcontrollers</li>
+	<li>ARM 7 LPC2148</li>
+	<li>ARM Cortex Core microcontrollers</li>
+	<li>System on Chip controllers</li>
+	<li>Raspberry Pi3</li>
+</ul>
+
+<h3>Communication interfaces</h3>
+<ul>
+	<li>Communication Protocols</li>
+	<li>Wireless technology</li>
+	<li>Serial Comm.  RS-232, RS-422, RS-485 etc.</li>
+	<li>Synchronous Interface: I2C, SPI, SSC and ESSI</li>
+	<li>Memory Devices – Flash based ROM, Storage Cards</li>
+	<li>General Purpose Input / Output (GPIO)</li>
+	<li>Graphic & Character LCDs</li>
+	<li>Real Time Clocks</li>
+	<li>Timers: PLL(s), Input Capture / Compare</li>
+	<li>Time Processing Units</li>
+	<li>Touch Screens, Keypads</li>
+	<li>Debugging Interfaces: JTAG, ISP, ICSP</li>
+	<li>Universal Serial Bus (USB) Peripherals</li>
+	<li>ADC to DAC / DAC to ADC Interfaces</li>
+	<li>WiFi, Bluetooth/BLE4.0,Zigbee,GSM/GPS, Radio RF</li>
+	<li>Intelligent Power Systems</li>
+	<li>Smart Card Readers, Sensor Networks</li>
+</ul>
+
+<h3>Software and firmware</h3>
+<ul>
+	<li>C, programming language</li>
+	<li>Data structures</li>
+	<li>C++ programming language</li>
+	<li>Embedded C</li>
+	<li>Linux shell programing</li>
+	<li>Embedded Linux </li>
+	<li>Linux Device drivers</li>
+</ul>
+
+<h3>Internet of Things (IoT)</h3>
+<ul>
+	<li>Introduction to the concept of IoT</li>
+	<li>IoT: Architecture,</li>
+	<li>Sensing, Connectivity, Analytics</li>
+	<li>IoT Stack and Protocols</li>
+	<li>IoT industry deployment examples</li>
+	<li>Introduction to Raspberry Pi</li>
+	<li>Features of Raspberry PI</li>
+	<li>Booting Raspberry Pi</li>
+	<li>Interfacing LED, Switch, LDR,</li>
+	<li>Interfacing with i2c sensor</li>
+	<li>Interfacing servo & DC motor</li>
+	<li>Caveats and security issues</li>
+	<li>Interfacing with the external world</li>
+</ul>
+
+<h3>Project work</h3>
+	Students need to complete Minimum 5 projects during the programme under the guidance of faculty member
+
+<h3>Basic Eligibility</h3>
+<p>Graduate in Engineering in IT / Computer Science / Electronics / IT & Telecommunications / Electrical / Instrumentation and other computer associated streams. No year down & no paper down from the Candidates to get placements. 60 % marks as aggregate in qualifying examination.</p><br>
+OR
+<p>Post Graduate Degree in Engineering Sciences with corresponding basic degree (e.g. MSc in Computer Science, IT, Electronics) with 60% marks as aggregate in qualifying examination.</p><br>
+Also Equally Required:
+<ul>
+	<li>Strong liking for basic Mathematics, Logical Reasoning</li>
+	<li>Analytical Bent of Mind</li>
+	<li>Desire to Learn</li>
+	<li>Willing to put sincere efforts and time to pick up new concepts</li>
+Duration and Timings
+	<li>Full Time Batch: 6 Months</li>
+Fees
+	<li>Rs.60,000/-</li>
+</ul>
+
+<h2>PG Diploma Embedded Systems Design</h2>
+<h3>Firmware, Driver and Software Development</h3>
+<ul>
+	<li>Computer Architecture, operating systems</li> 
+	<li>C programing & Data Structures </li>
+	<li>Embedded ‘C’ with 8051/PIC/ARM</li>
+	<li>C++ Programing with ARM CORTEX</li>
+	<li>Linux Shell Programing </li>
+	<li>Linux  porting on ARM Cortex M3/ M4 </li>
+	<li>Embedded Linux Application on  Beaglebone</li>
+	<li>Linux Device Drivers CHAR/BLOCK</li>
+	<li>USB/Network Drivers</li>
+	<li>RTOS on ARM CORTEX  –RTLinux /Free RTOS</li>
+Communication interfaces</li>
+	<li>Communication Protocols</li>
+	<li>Wireless technology </li>
+	<li>Serial Comm. RS-232, RS-422, RS-485 etc. </li>
+	<li>Synchronous Interface: I2C, SPI, SSC and ESSI </li>
+	<li>Automotive interface, CAN, LIN, FlexRay</li>
+	<li>Memory Devices – Flash based ROM, Storage Cards </li>
+	<li>General Purpose Input / Output (GPIO) </li>
+	<li>Graphic & Character LCDs </li>
+	<li>Real Time Clocks </li>
+	<li>Timers: PLL(s), Input Capture / Compare </li>
+	<li>Time Processing Units </li>
+	<li>Touch Screens, Keypads </li>
+	<li>Debugging Interfaces: JTAG, ISP, ICSP </li>
+	<li>Universal Serial Bus (USB) Peripherals </li>
+	<li>Analog to Digital / Digital to Analog (ADC/DAC) Interfaces ,</li>
+	<li>GSM Modules ,Intelligent Power Systems </li>
+	<li>Smart Card Readers</li>
+</ul>
+<h3>Microcontroller/ DSP-based design</h3>
+<ul>
+	<li>Digital Electronics </li>
+	<li>Circuit design and PCB development</li>
+	<li>8051 Microcontrollers </li>
+	<li>8 bit/16 bit PIC Microcontrollers </li>
+	<li>ARM 7/9/11 Microcontrollers</li>
+	<li>MSP430/ BeagleBone Black /Raspberry Pi</li>
+</ul>
+
+<h3>Wireless Embedded Systems Design</h3>
+<ul>
+	<li>Protocol Design and Validation</li>
+	<li>Network Embedded Systems</li>
+	<li>Bluetooth and IrDA</li>
+	<li>Wireless Sensor Networks and ZigBee</li>
+	<li>Wireless LAN ,IEEE 802.11</li>
+	<li>RFID- GSM and GPRS</li>
+</ul>
+<h3>Internet of things ( IOT)  development </h3>
+<ul>
+	<li>Concepts of Internet of Things</li>
+	<li>Architecture of Internet of Things</li>
+	<li>Technology used in Internet of Things </li>
+	<li>Communication Networks,</li>
+	<li>Computer Networks</li>
+	<li>Digital Signal Processing, </li>
+	<li>RFID. Sensor Networks, M2M</li>
+	<li>Cloud Computing, Information Security</li>
+	<li>Project work using  BeagleBone Black /Raspberry Pi</li>
+</ul>
+<h3>Running Qt for Embedded applications</h3>
+<ul>
+	<li>Installing QT Framework.</li>
+	<li>Installing Open cv and Pocket Sphinx.</li>
+	<li>Application Development Using QT Creator.</li>
+	<li>Sensors and modules Programming in QT Creator.</li>
+	<li>Wireless Protocol Programming in QT Creator.</li>
+	<li>Image and Video Processing Programming in Open cv.</li>
+	<li>Audio Processing Programming in Pocket Sphinx.</li>
+	<li>Interfacing Open cv with QT Creator.</li>
+	<li>Interfacing Pocket Sphinx with QT Creator.</li>
+	<li>Creating HTML and HTTP pages for ARM Board.</li>
+	<li>Setting Cross Compiler in QT for ARM.</li>
+	<li>Executing Cross Compiled project file on ARM Board</li>
+</ul>
+<h3>Embedded Communication / Linux Network Programming</h3>
+<ul>
+<li>Networking Architecture in Linux</li>
+	<li>TCP/IP de facto model and layer in kernel</li>
+	<li>Client – Server Programming API</li>
+	<li>TCP, UDP, RAW, UNIX, FTP,TFTP</li>
+	<li>VOIP Protocol Programming</li>
+	<li>Iterative server, Concurrent Server</li>
+	<li>Broadcast Server Programming</li>
+	<li>Wireless Architecture and Programming</li>
+	<li>Wireless Embedded Systems Design</li>
+	<li>Protocol Design and Validation </li>
+	<li>Network Embedded Systems </li>
+	<li>Bluetooth and IrDA</li>
+	<li>Wireless Sensor Networks and ZigBee</li>
+	<li>Wireless LAN ,IEEE 802.11</li>
+	<li>RFID- GSM and GPRS</li>
+	<li>Ubiquitous Computing</li>
+</ul>
+
+<h3>Basic Eligibility</h3>
+<p>Graduate in Engineering in IT / Computer Science / Electronics / IT & Telecommunications / Electrical / Instrumentation and other computer associated streams. No year down & no paper down from the Candidates to get placements. 60 % marks as aggregate in qualifying examination.</p>
+OR
+<p>
+Post Graduate Degree in Engineering Sciences with corresponding basic degree (e.g. MSc in Computer Science, IT, Electronics) with 60% marks as aggregate in qualifying examination.</p>
+<h3>Also Equally Required:</h3>
+<ul>
+	<li>Strong liking for basic Mathematics, Logical Reasoning</li>
+	<li>Analytical Bent of Mind</li>
+	<li>Desire to Learn</li>
+	<li>Willing to put sincere efforts and time to pick up new concepts</li>
+Duration and Timings<br>
+
+       Full Time Batch: 6 Months<br>
+Fees<br>
+Rs.75,000<br>
+
+
+<h2>Certificate Course in Artificial Intelligence and Robotics</h2>
+<h3>Out-line of course contents</h3>
+What is intelligence?	Neural networks<br>
+Expert Systems	Applications of AI: Games-playing<br>
+Artificial Intelligence	AI-Applications of AI: Artificial examiners (exam grading)<br>
+Searching	Robotics-Driverless cars<br>
+Heuristics	Civilian applications for drones<br>
+Computational Intelligence	Industrial robots<br>
+Pattern recognition	Ethical issues<br>
+Natural language processing	Robotic input devices<br>
+Representing knowledge	Robotic output devices<br>
+Subjects of study during this course<br>
+
+Part-A
+<ul>
+	<li>Computer Organization & Architecture</li>
+	<li>Mathematical Foundations of Computer Science</li>
+	<li>Data Structures & Algorithms</li>
+<li>Operating Systems – Overview</li>
+	<li>Programming Lab</li>
+	<li>Fundamentals of Robotics</li>
+	<li>Principles of Robotics</li>
+	<li>Robotics Lab</li>
+	<li>Embedded systems</li>
+	<li>Seminar</li>
+</ul>
+Part-B
+<ul>
+	<li>Machine Learning</li>
+	<li>Supervised and Unsupervised Learning</li>
+	<li>Supervised Learning</li>
+	<li>Regression: Linear, Logistic</li>
+	<li>Neural Networks</li>
+	<li>Fuzzy Systems (overview)</li>
+	<li>Support Vector Machines (SVMs)</li>
+	<li>Unsupervised Learning</li>
+	<li>Clustering</li>
+	<li>Anomaly Detection</li>
+	<li>Recommender Systems</li>
+	<li>Artificial Intelligence</li>
+	<li>Expert Systems</li>
+	<li>Concepts and Application Areas</li>
+	<li>	Pattern Recognition</li>
+	<li>Natural Language Processing</li>
+	<li>Image Processing</li>
+	<li>Computer Vision</li>
+	<li>AI & Expert Systems Lab</li>
+	<li>Project</li>
+</ul>
+
+Minimum Requisite:<br>
+
+<p>Bachelor’s Degree in Engineering (Computer Science / Electronics / IT / IT & Telecommunications / Electrical / Instrumentation and other allied streams). 60 % marks as aggregate in qualifying examination.</p>
+OR<br>
+<p>PG Degree in relevant stream (e.g. MSc in Mathematics, Statistics, Computer Science, IT, Electronics). 60% marks as aggregate in qualifying examination.</p>
+<h3>Also Equally Required:</h3>
+•	<li>Strong liking for Mathematics, Logical Reasoning</li>
+•	<li>Analytical Bent of Mind</li>
+•	<li>Desire to Learn</li>
+•	<li>Willing to put sincere efforts and time to pick up new concepts</li>
+<h3>Course Fee:</h3>
+Rs.1,20,000/-
+
+
+
+</div>
+
+<div class="container">
+	<div class="main" id=bit3>
+		<h2>Interview Questions</h2>
+		
+		
+			<h3>CORE JAVA</h3>
+			<h6>WHAT IS JAVA?</h6>
+			<p class="ab">Java is a programming language and a platform.
+
+			Java is a high level, robust, secured and object-oriented programming language.
+
+			Platform: Any hardware or software environment in which a program runs, is known as a platform. Since Java has its own runtime environment (JRE) and API, it is called platform.
+
+			Java is an object programming language that was designed to be portable across multiple platforms and operating systems.</p>
+
+			<h6>WHAT IS PLATFORM INDEPENDENT?</h6>
+			<p class="ab">platform independence means that the same program works on anyplatform (operating system) without needing any modification. In the case of Java the application runs in a Java Virtual Machine which itself isn't platform independent.</p>
+
+			<h6>HOW MANY TYPES OF MEMORY ALLOCATED BY JVM?</h6>
+			<p class="ab">There are five type of memory allocated by JVM: 4 Types (1) Class area (2) heap memory (3) static memory (4) native method stac memory</p>
+
+			<h6>WILL PROGRAM RUN WHEN YOU WRITE STATIC PUBLIC VOID INSTEAD OF PUBLIC STATIC VOID?</h6>
+			<p class="ab">Yes, it doesn’t matter what comes first. You can write static first and then public.</p>
+
+			<h6>WHAT IS CONSTRUCTOR?</h6>
+			<p class="ab">Constructors are special member functions whose task is to initialize the objects of its class. It is treated as a special member function because its name is the same as the class name.</p>
+
+			<h6>WHAT IS CLASS VARIABLE?</h6>
+			<p class="ab">Variable are declared with in a class, outside of any method, with static keyword are class class variable</p>
+
+			<h6>WHAT IS JVM ? WHY IS JAVA CALLED THE PLATFORM INDEPENDENT PROGRAMMING LANGUAGE?</h6>
+			<p class="ab">A Java virtual machine (JVM) is a process virtual machine that can execute Java bytecode. Each Java source file is compiled into a bytecode file, which is executed by the JVM. Java was designed to allow application programs to be built that could be run on any platform, without having to be rewritten or recompiled by the programmer for each separate platform. A Java virtual machine makes this possible, because it is aware of the specific instruction lengths and other particularities of the underlying hardware platform.</p>
+
+			<h6>WHAT IS THE DIFFERENCE BETWEEN JDK AND JRE ?</h6>
+			<p class="ab">The Java Runtime Environment (JRE) is basically the Java Virtual Machine (JVM) where your Java programs are being executed. It also includes browser plugins for applet execution. The Java Development Kit (JDK) is the full featured Software Development Kit for Java, including the JRE, the compilers and tools (like JavaDoc, and Java Debugger), in order for a user to develop, compile and execute Java applications.</p>
+
+			<h6>WHAT DOES THE “STATIC” KEYWORD MEAN ? CAN YOU OVERRIDE PRIVATE OR STATIC METHOD IN JAVA ?</h3>
+			<p class="ab">The static keyword denotes that a member variable or method can be accessed, without requiring an instantiation of the class to which it belongs. A user cannot override static methods in Java, because method overriding is based upon dynamic binding at runtime and static methods are statically binded at compile time. A static method is not associated with any instance of a class so the concept is not applicable.</p>
+
+			<h6>CAN YOU ACCESS NON STATIC VARIABLE IN STATIC CONTEXT ?</h6>
+			<p class="ab">A static variable in Java belongs to its class and its value remains the same for all its instances. A static variable is initialized when the class is loaded by the JVM. If your code tries to access a non-static variable, without any instance, the compiler will complain, because those variables are not created yet and they are not associated with any instance.</p>
+
+			<h6>WHAT IS FUNCTION OVERRIDING AND OVERLOADING IN JAVA ?</h6>
+			<p class="ab">Method overloading in Java occurs when two or more methods in the same class have the exact same name, but different parameters. On the other hand, method overriding is defined as the case when a child class redefines the same method as a parent class. Overridden methods must have the same name, argument list, and return type. The overriding method may not limit the access of the method it overrides.</p>
+
+			<h6>WHAT IS A CONSTRUCTOR, CONSTRUCTOR OVERLOADING IN JAVA AND COPY-CONSTRUCTOR ?</h6>
+			<p class="ab">A constructor gets invoked when a new object is created. Every class has a constructor. In case the programmer does not provide a constructor for a class, the Java compiler (Javac) creates a default constructor for that class. The constructor overloading is similar to method overloading in Java. Different constructors can be created for a single class. Each constructor must have its own unique parameter list. Finally, Java does support copy constructors like C++, but the difference lies in the fact that Java doesn’t create a default copy constructor if you don’t write your own.</p>
+
+			<h6>DOES JAVA SUPPORT MULTIPLE INHERITANCE ?</h3>
+			<p class="ab">No, Java does not support multiple inheritance. Each class is able to extend only on one class, but is able to implement more than one interfaces.</p>
+
+			<h6>WHAT IS THE DIFFERENCE BETWEEN AN INTERFACE AND AN ABSTRACT CLASS ?</h6>
+			<p class="ab">Java provides and supports the creation both of abstract classes and interfaces. Both implementations share some common characteristics, but they differ in the following features:
+
+			• All methods in an interface are implicitly abstract. On the other hand, an abstract class may contain both abstract and no abstract methods.
+			• A class may implement a number of Interfaces, but can extend only one abstract class.
+
+			• In order for a class to implement an interface, it must implement all its declared methods. However, a class may not implement all declared methods of an abstract class. Though, in this case, the sub-class must also be declared as abstract.
+
+			• Abstract classes can implement interfaces without even providing the implementation of interface methods.
+
+			• Variables declared in a Java interface is by default final. An abstract class may contain non-final variables.
+
+			• Members of a Java interface are public by default. A member of an abstract class can either be private, protected or public.
+
+			• An interface is absolutely abstract and cannot be instantiated. An abstract class also cannot be instantiated, but can be invoked if it contains a main method.</p>
+
+			<h6>WHAT ARE PASS BY REFERENCE AND PASS BY VALUE ?</h3>
+			<p class="ab">When an object is passed by value, this means that a copy of the object is passed. Thus, even if changes are made to that object, it doesn’t affect the original value. When an object is passed by reference, this means that the actual object is not passed, rather a reference of the object is passed. Thus, any changes made by the external method, are also reflected in all place</p>
+					
+		<h3>JAVA THREADS</h3>
+				
+				
+				
+				<h6>  What is the difference between processes and threads ? </h6>
+				<p class="ab">A process is an execution of a program, while a Thread is a single execution sequence within a process. A process can contain multiple threads. A Thread is sometimes called a lightweight process. </p>
+
+				
+				
+				<h6> Explain different ways of creating a thread. Which one would you prefer and why ? </h6>
+				
+				<p>
+				
+			There are three ways that can be used in order for a Thread to be created:</p><p>
+ • A class may extend the Thread class. </p><p>
+• A class may implement the Runnable interface. </p><p>
+• An application can use the Executor framework, in order to create a thread pool. The Runnable interface is preferred, as it does not require an object to inherit the Thread class. In case your application design requires multiple inheritance, only interfaces can help you. Also, the thread pool is very efficient and can be implemented and used very easily.
+	</p>
+			 	
+				
+				<h6> Explain the available thread states in a high-level. </h6>
+		<p>During its execution, a thread can reside in one of the following states: </p><p>
+• Runnable: A thread becomes ready to run, but does not necessarily start running immediately. </p><p>
+• Running: The processor is actively executing the thread code.</p><p>
+ • Waiting: A thread is in a blocked state waiting for some external processing to finish. </p><p>
+• Sleeping: The thread is forced to sleep.</p><p>
+ • Blocked on I/O: Waiting for an I/O operation to complete. </p><p>
+• Blocked on Synchronization: Waiting to acquire a lock.</p><p>
+ • Dead: The thread has finished its execution. Java Interview Questions  
+</p>
+
+				<h6>What is the difference between a synchronized method and a synchronized block ?</h6>
+		<p>In Java programming, each object has a lock. A thread can acquire the lock for an object by using the synchronized keyword. The synchronized keyword can be applied in a method level (coarse grained lock) or block level of code (fine grained lock).</p>
+		
+		
+		
+		
+				<h6>How does thread synchronization occurs inside a monitor ? What levels of synchronization can you apply ? </h6>
+		<p>The JVM uses locks in conjunction with monitors. A monitor is basically a guardian that watches over a sequence of synchronized code and ensuring that only one thread at a time executes a synchronized piece of code. Each monitor is associated with an object reference. The thread is not allowed to execute the code until it obtains the lock. </p>		
+		
+				<h6>What’s a deadlock ? </h6>
+		<p>A condition that occurs when two processes are waiting for each other to complete, before proceeding. The result is that both processes wait endlessly. </p>
+		
+		
+		
+		
+				<h6>How do you ensure that N threads can access N resources without deadlock? </h6>
+		<p> A very simple way to avoid deadlock while using N threads is to impose an ordering on the locks and force each thread to follow that ordering. Thus, if all threads lock and unlock the mutexes in the same order, no deadlocks can arise. </p>
+		
+		
+		
+		
+		<h3>Java Collections </h3>
+				
+				
+				
+				<h6>  What are the basic interfaces of Java Collections Framework?  </h6>
+					<p class="ab">Java Collections Framework provides a well-designed set of interfaces and classes that support operations on a collections of objects. The most basic interfaces that reside in the Java Collections Framework are:
+</p><p>• Collection, which represents a group of objects known as its elements. 
+</p><p>• Set, which is a collection that cannot contain duplicate elements. 
+</p><p>• List, which is an ordered collection and can contain duplicate elements.
+</p><p> • Map, which is an object that maps keys to values and cannot contain duplicate keys. 
+</p>
+
+				
+			
+				<h6> Why Collection doesn’t extend Cloneable and Serializable interfaces ?  </h6>
+				
+				<p>
+			The Collection interface specifies groups of objects known as elements. Each concrete implementation of a Collection can choose its own way of how to maintain and order its elements. Some collections allow duplicate keys, while some other collections don’t. The semantics and the implications of either cloning or serialization come into play when dealing with actual implementations. Thus, the concrete implementations of collections should decide how they can be cloned or serialized. 	</p>
+			 	
+				
+				<h6>What is an Iterator ? </h6>
+		<p> The Iterator interface provides a number of methods that are able to iterate over any Collection. Each Java Collection contains the iterator method that returns an Iterator instance. Iterators are capable of removing elements from the underlying collection during the iteration.  
+</p>
+		
+		
+		
+			
+				<h6> What differences exist between Iterator and ListIterator ? </h6>
+		<p>The differences of these elements are listed below: </p><p>
+• An Iterator can be used to traverse the Set and List collections, while the ListIterator can be used to iterate only over Lists. </p><p>
+• The Iterator can traverse a collection only in forward direction, while the ListIterator can traverse a List in both directions.</p><p> 
+• The ListIterator implements the Iterator interface and contains extra functionality, such as adding an element, replacing an element, getting the index position for previous and next elements, etc.
+</p>
+
+				<h6> What is difference between fail-fast and fail-safe? </h6>
+		<p> The Iterator’s fail-safe property works with the clone of the underlying collection and thus, it is not affected by any modification in the collection. All the collection classes in java.util package are fail-fast, while the collection classes in java. util. concurrent are fail-safe. Fail-fast iterators throw a Concurrent Modification Exception, while fail-safe iterator never throws such an exception.</p>
+
+				<h6> How HashMap works in Java ? </h6>
+		<p> A HashMap in Java stores key-value pairs. The HashMap requires a hash function and uses hashCode and equals methods, in order to put and retrieve elements to and from the collection respectively. When the put method is invoked, the Hash Map calculates the hash value of the key and stores the pair in the appropriate index inside the collection. If the key exists, its value is updated with the new value. Some important characteristics of a Hash Map are its capacity, its load factor and the threshold resizing. </p>
+
+				<h6> What is the importance of hash Code () and equals () methods?  </h6>
+		<p>In Java, a Hash Map uses the hash Code and equals methods to determine the index of the key-value pair and to detect duplicates. More specifically, the hash Code method is used in order to determine where the specified key will be stored. Since different keys may produce the same hash value, the equals method is used, in order to determine whether the specified key actually exists in the collection or not. Therefore, the implementation of both methods is crucial to the accuracy and efficiency of the HashMap. </p>
+	
+				<h6>What differences exist between HashMap and Hashtable ?  </h6>
+		<p>Both the HashMap and Hashtable classes implement the Map interface and thus, have very similar characteristics. </p><p>
+However, they differ in the following features: </p><p>
+ • A HashMap allows the existence of null keys and values, while a Hashtable doesn’t allow neither null keys, nor null values.  </p><p>
+ </p><p>• A Hashtable is synchronized, while a HashMap is not. Thus, HashMap is preferred in single-threaded environments, while a Hashtable is suitable for multi-threaded environments. 
+ </p><p>• A HashMap provides its set of keys and a Java application can iterate over them. Thus, a HashMap is fail-fast. On the other hand, a Hashtable provides an Enumeration of its keys. 
+ </p><p>• The Hashtable class is considered to be a legacy class.
+</p>
+
+				<h6> What is the importance of hash Code () and equals () methods?  </h6>
+		<p>In Java, a Hash Map uses the hash Code and equals methods to determine the index of the key-value pair and to detect duplicates. More specifically, the hash Code method is used in order to determine where the specified key will be stored. Since different keys may produce the same hash value, the equals method is used, in order to determine whether the specified key actually exists in the collection or not. Therefore, the implementation of both methods is crucial to the accuracy and efficiency of the HashMap. </p>
+	
+				<h6> What is difference between Array and ArrayList ? When will you use Array over ArrayList ?   </h6>
+		<p>The Array and ArrayList classes differ on the following features:  </p><p>
+• Arrays can contain primitive or objects, while an ArrayList can contain only objects.  </p><p>
+• Arrays have fixed size, while an ArrayList is dynamic.  </p><p>
+• An ArrayList provides more methods and features, such as addAll, removeAll, iterator, etc.  </p><p>
+ </p><p>• For a list of primitive data types, the collections use autoboxing to reduce the coding effort. However, this approach makes them slower when working on fixed size primitive data types.
+
+</p>
+
+				<h6> What is difference between ArrayList and LinkedList ?  </h6>
+		<p>Both the ArrayList and LinkedList classes implement the List interface, but they differ on the following features:</p><p>
+ • An ArrayList is an index based data structure backed by an Array. It provides random access to its elements with a performance equal to O(1). On the other hand, a LinkedList stores its data as list of elements and every element is linked to its previous and next element. In this case, the search operation for an element has execution time equal to O(n). 
+</p><p>• The Insertion, addition and removal operations of an element are faster in a LinkedList compared to an ArrayList, because there is no need of resizing an array or updating the index when an element is added in some arbitrary position inside the collection. 
+</p><p>• A LinkedList consumes more memory than an ArrayList, because every node in a LinkedList stores two references, one for its previous element and one for its next element. Check also our article ArrayList vs. LinkedList. 
+
+</p>
+
+				<h6> What is Comparable and Comparator interface ?  </h6>
+		<p>List their differences. Java provides the Comparable interface, which contains only one method, called compareTo. This method compares two objects, in order to impose an order between them. Specifically, it returns a negative integer, zero, or a positive integer to indicate that the input object is less than, equal or greater than the existing object. Java provides the Comparator interface, which contains two methods, called compare and equals. The first method compares its two input arguments and imposes an order between them. It returns a negative integer, zero, or a positive integer to indicate that the first argument is less than, equal to, or greater than the second. The second method requires an object as a parameter and aims to decide whether the input object is equal to the comparator. The method returns true, only if the specified object is also a comparator and it imposes the same ordering as the comparator. 
+</p>
+
+				<h6> What is Java Priority Queue ?  </h6>
+		<p>The PriorityQueue is an unbounded queue, based on a priority heap and its elements are ordered in their natural order. At the time of its creation, we can provide a Comparator that is responsible for ordering the elements of the PriorityQueue. A PriorityQueue doesn’t allow null values, those objects that doesn’t provide natural ordering, or those objects that don’t have any comparator associated with them. Finally, the Java PriorityQueue is not thread-safe and it requires O(log(n)) time for its enqueing and dequeing operations.  
+</p>
+
+				<h6>What do you know about the big-O notation and can you give some examples with respect to different data structures ? </h6>
+		<p> The Big-O notation simply describes how well an algorithm scales or performs in the worst case scenario as the number of elements in a data structure increases. The Big-O notation can also be used to describe other behavior such as memory consumption. Since the collection classes are actually data structures, we usually use the Big-O notation to chose the best implementation to use, based on time, memory and performance. Big-O notation can give a good indication about performance for large amounts of data.  </p>
+
+	
+				<h6>What is the tradeoff between using an unordered array versus an ordered array ?  </h6>
+		<p>The major advantage of an ordered array is that the search times have time complexity of O(log n), compared to that of an unordered array, which is O (n). The disadvantage of an ordered array is that the insertion operation has a time complexity of O(n), because the elements with higher values must be moved to make room for the new element. Instead, the insertion operation for an unordered array takes constant time of O(1). </p>
+
+	
+				<h6>  What are some of the best practices relating to the Java Collection framework ?   </h6>
+		<p>• Choosing the right type of the collection to use, based on the application’s needs, is very crucial for its performance. For example if the size of the elements is fixed and know a priori, we shall use an Array, instead of an ArrayList. 
+</p><p>• Some collection classes allow us to specify their initial capacity. Thus, if we have an estimation on the number of elements that will be stored, we can use it to avoid rehashing or resizing.
+</p><p> • Always use Generics for type-safety, readability, and robustness. Also, by using Generics you avoid the ClassCastException during runtime. 
+</p><p>• Use immutable classes provided by the Java Development Kit (JDK) as a key in a Map, in order to avoid the implementation of the hashCode and equals methods for our custom class. 
+</p><p>• Program in terms of interface not implementation. 
+• Return zero-length collections or arrays as opposed to returning a null in case the underlying collection is actually empty. 
+</p>
+
+				<h6>What’s the difference between Enumeration and Iterator interfaces?   </h6>
+		<p>Enumeration is twice as fast as compared to an Iterator and uses very less memory. However, the Iterator is much safer compared to Enumeration, because other threads are not able to modify the collection object that is currently traversed by the iterator. Also, Iterator sallow the caller to remove elements from the underlying collection, something which is not possible with Enumerations. 
+</p>
+		
+		 
+		 
+	 
+				<h6>What is the difference between HashSet and TreeSet ? </h6>
+		<p> The HashSet is implemented using a hash table and thus, its elements are not ordered. The add, remove, and contains methods of a HashSet have constant time complexity O(1). On the other hand, a Tree Set is implemented using a tree structure. The elements in a TreeSet are sorted, and thus, the add, remove, and contains methods have time complexity of O(logn). 
+</p>
+		
+		
+		<h3>Exception Handling </h3>
+
+				<h6>   What are the two types of Exceptions in Java ? Which are the differences between them ?  </h6>
+					<p class="ab">Java has two types of exceptions: checked exceptions and unchecked exceptions. Unchecked exceptions do not need to be declared in a method or a constructor’s throws clause, if they can be thrown by the execution of the method or the constructor, and propagate outside the method or constructor boundary. On the other hand, checked exceptions must be declared in a method or a constructor’s throws clause. See here for tips on Java exception handling. 
+</p>
+
+				
+				<h6> What is the difference between Exception and Error in java ?  </h6>
+				
+				<p>
+		Exception and Error classes are both subclasses of the Throwable class. The Exception class is used for exceptional conditions that a user’s program should catch. The Error class defines exceptions that are not excepted to be caught by the user program.</p>	 	
+			
+				<h6> What is the difference between throw and throws ?  </h6>
+		<p>The throw keyword is used to explicitly raise a exception within the program. On the contrary, the throws clause is used to indicate those exceptions that are not handled by a method. Each method must explicitly specify which exceptions does not handle, so the callers of that method can guard against possible exceptions. Finally, multiple exceptions are separated by a comma. </p>
+
+				<h6> What is the importance of finally block in exception handling ? </h6>
+		<p>A finally block will always be executed, whether or not an exception is actually thrown. Even in the case where the catch statement is missing and an exception is thrown, the finally block will still be executed. Last thing to mention is that the finally block is used to release resources like I/O buffers, database connections, etc. </p>
+
+				<h6>What will happen to the Exception object after exception handling ?  </h6>
+		<p>The Exception object will be garbage collected in the next garbage collection. </p>
+
+				<h6> How does finally block differ from finalize() method ? </h6>
+		<p>  A finally block will be executed whether or not an exception is thrown and is used to release those resources held by the application. Finalize is a protected method of the Object class, which is called by the Java Virtual Machine (JVM) just before an object is garbage collected </p>
+		
+		<h3>JDBC </h3>
+
+				<h6>  What is JDBC?  </h6>
+					<p class="ab">JDBC is an abstraction layer that allows users to choose between databases. JDBC enables developers to write database applications in Java, without having to concern themselves with the underlying details of a particular database. 
+Explain the role of Driver in JDBC. The JDBC Driver provides vendor-specific implementations of the abstract classes provided by the JDBC API. Each driver must provide implementations for the following classes of the java.sql package:Connection, Statement, PreparedStatement, CallableStatement, ResultSet and Driver. 
+</p>
+
+				<h6> What is the purpose Class.forName method ?   </h6>
+				<p>
+	This method is used to method is used to load the driver that will establish a connection to the database. 9.4 What is the advantage of PreparedStatement over Statement ? PreparedStatements are precompiled and thus, their performance is much better. Also, PreparedStatement objects can be reused with different input values to their queries.
+	</p>	 		
+				<h6> What is the use of Callable Statement? </h6>
+		<p> Name the method, which is used to prepare a CallableStatement. A CallableStatement is used to execute stored procedures. Stored procedures are stored and offered by a database. Stored procedures may take input values from the user and may return a result. The usage of stored procedures is highly encouraged, because it offers security and modularity.The method that prepares a CallableStatement is the following: CallableStament. prepareCall();  </p>
+
+				<h6> What does Connection pooling mean ? </h6>
+		<p> The interaction with a database can be costly, regarding the opening and closing of database connections. Especially, when the number of database clients increases, this cost is very high and a large number of resources is consumed. A pool of database connections is obtained at start up by the application server and is maintained in a pool. A request for a connection is served by a connection residing in the pool. In the end of the connection, the request is returned to the pool and can be used to satisfy future requests.</p>
+		
+		
+		
+		<h3>Servlet </h3>
+				
+				
+				
+				<h6> What is a Servlet ? </h6>
+			<p class="ab">The servlet is a Java programming language class used to process client requests and generate dynamic web content. Servlets are mostly used to process or store data submitted by an HTML form, provide dynamic content and manage state information that does not exist in the stateless HTTP protocol.</p>
+
+				
+				
+				<h6>Explain the architechure of a Servlet. </h6>
+				
+				<p>
+ The core abstraction that must be implemented by all servlets is the javax.servlet.Servlet interface. Each servlet must implement it either directly or indirectly, either by extending javax.servlet.GenericServlet or javax.servlet.http.HTTPServlet. Finally, each servlet is able to serve multiple requests in parallel using multithreading. 	</p>	 
+				
+				<h6>What is the difference between an Applet and a Servlet ? </h6>
+		<p> An Applet is a client side java program that runs within a Web browser on the client machine. On the other hand, a servlet is a server side component that runs on the web server.An applet can use the user interface classes, while a servlet does not have a user interface. Instead, a servlet waits for client’s HTTP requests and generates a response in every request.  </p>
+	
+		
+		
+		
+				<h6>What is the difference between GenericServlet and HttpServlet ? </h6>
+		<p> GenericServlet is a generalized and protocol-independent servlet that implements the Servlet and ServletConfig interfaces. Those servlets extending the GenericServlet class shall override the service method. Finally, in order to develop an HTTP servlet for use on the Web that serves requests using the HTTP protocol, your servlet must extend the HttpServlet instead. Check Servlet examples here. </p>
+	
+		
+	 
+		 	
+				<h6>Explain the life cycle of a Servlet. </h6>
+		<p> On every client’s request, the Servlet Engine loads the servlets and invokes its init methods, in order for the servlet to be initialized. Then, the Servlet object handles all subsequent requests coming from that client, by invoking the service method for each request separately. Finally, the servlet is removed by calling the server’s destroy method. </p>
+		
+		
+				<h6>What is the difference between doGet() and doPost() ? </h6>
+		<p>  doGET: The GET method appends the name-value pairs on the request’s URL. Thus, there is a limit on the number of characters and subsequently on the number of values that can be used in a client’s request. Furthermore, the values of the request are made visible and thus, sensitive information must not be passed in that way. doPOST: The POST method overcomes the limit imposed by the GET request, by sending the values of the request inside its body. Also, there is no limitations on the number of values to be sent across. Finally, the sensitive information passed through a POST request is not visible to an external client.  </p>
+
+				<h6>What is meant by a Web Application ? </h6>
+		<p> A Web application is a dynamic extension of a Web or application server. There are two types of web applications: presentationoriented and service-oriented. A presentation-oriented Web application generates interactive web pages, which contain various types of markup language and dynamic content in response to requests. On the other hand, a service-oriented web application implements the endpoint of a web service. In general, a Web application can be seen as a collection of servlets installed under a specific subset of the server’s URL namespace.
+
+		</p>
+
+
+				<h6>What is a Server Side Include (SSI) ? </h6>
+		<p> Server Side Includes (SSI) is a simple interpreted server-side scripting language, used almost exclusively for the Web, and is embedded with a servlet tag. The most frequent use of SSI is to include the contents of one or more files into a Web page on a Web server. When a Web page is accessed by a browser, the Web server replaces the servlet tag in that Web page with the hyper text generated by the corresponding servlet. 
+
+		</p>
+
+				<h6>What is Servlet Chaining ?  </h6>
+		<p> Servlet Chaining is the method where the output of one servlet is sent to a second servlet. The output of the second servlet can be sent to a third servlet, and so on. The last servlet in the chain is responsible for sending the response to the client. 
+		</p>
+
+				<h6> How do you find out what client machine is making a request to your servlet ? </h6>
+		<p> The Servlet Request class has functions for finding out the IP address or host name of the client machine. getRemoteAddr() gets the IP address of the client machine and getRemoteHost() gets the host name of the client machine. See example here. 
+		</p>
+
+				<h6>What is the structure of the HTTP response ? </h6>
+		<p>The HTTP response consists of three parts: </p><p>
+• Status Code: describes the status of the response. It can be used to check if the request has been successfully completed. In case the request failed, the status code can be used to find out the reason behind the failure. If your servlet does not return a status code, the success status code, HttpServletResponse.SC_OK, is returned by default.
+</p><p> • HTTP Headers: they contain more information about the response. For example, the headers may specify the date/time after which the response is considered stale, or the form of encoding used to safely transfer the entity to the user. See how to retrieve headers in Servlet here
+.</p><p> • Body: it contains the content of the response. The body may contain HTML code, an image, etc. The body consists of the data bytes transmitted in an HTTP transaction message immediately following the headers. 
+
+		</p>
+		
+		
+				<h6> What is a cookie ?What is the difference between session and cookie ?</h6>
+		<p>A cookie is a bit of information that the Web server sends to the browser. The browser stores the cookies for each Web server in a local file. In a future request, the browser, along with the request, sends all stored cookies for that specific Web server.The differences between session and a cookie are the following:
+</p><p> • The session should work, regardless of the settings on the client browser. The client may have chosen to disable cookies. However, the sessions still work, as the client has no ability to disable them in the server side. 
+</p><p>• The session and cookies also differ in the amount of information the can store. The HTTP session is capable of storing any Java object, while a cookie can only store String objects.
+	</p>
+		
+		
+				<h6> Which protocol will be used by browser and servlet to communicate ? </h6>
+		<p>The browser communicates with a servlet by using the HTTP protocol. 	</p>
+		
+	
+				<h6> What is HTTP Tunneling ? </h6>
+		<p>HTTP Tunneling is a technique by which, communications performed using various network protocols are encapsulated using the HTTP or HTTPS protocols. The HTTP protocol therefore acts as a wrapper for a channel that the network protocol being tunneled uses to communicate. The masking of other protocol requests as HTTP requests is HTTP Tunneling. 	</p>
+		
+		
+				<h6> What’s the difference between sendRedirect and forward methods ? </h6>
+		<p>The sendRedirect method creates a new request, while the forward method just forwards a request to a new target. The previous request scope objects are not available after a redirect, because it results in a new request. On the other hand, the previous request scope objects are available after forwarding. FInally, in general, the sendRedirect method is considered to be slower compare to the forward method. 	</p>
+		
+		
+				<h6> What is URL Encoding and URL Decoding ?  </h6>
+		<p>The URL encoding procedure is responsible for replacing all the spaces and every other extra special character of a URL, into their corresponding Hex representation. In correspondence, URL decoding is the exact opposite procedure.
+		</p>
+		
+		
+	<h3>JSP </h3>
+				
+				
+				
+				<h6>  What is a JSP Page ? </h6>
+					<p class="ab"> A Java Server Page (JSP) is a text document that contains two types of text: static data and JSP elements. Static data can be expressed in any text-based format, such as HTML or XML. JSP is a technology that mixes static content with dynamically generated content.
+				</p>
+
+				
+				<h6>How are the JSP requests handled ? </h6>
+				
+				<p>
+On the arrival of a JSP request, the browser first requests a page with a .jsp extension. Then, the Web server reads the request and using the JSP compiler, the Web server converts the JSP page into a servlet class. Notice that the JSP file is compiled only on the first request of the page, or if the JSP file has changed.The generated servlet class is invoked, in order to handle the browser’s request. Once the execution of the request is over, the servlet sends a response back to the client. See how to get Request parameters in a JSP. 
+
+	</p>	 	
+	
+	
+				
+				<h6>What are the advantages of JSP ? </h6>
+		<p> The advantages of using the JSP technology are shown below:</p><p>
+ • JSP pages are dynamically compiled into servlets and thus, the developers can easily make updates to presentation code.</p><p>
+ • JSP pages can be pre-compiled. </p><p>
+• JSP pages can be easily combined to static templates, including HTML or XML fragments, with code that generates dynamic content. </p><p>
+• Developers can offer customized JSP tag libraries that page authors access using an XML-like syntax. </p><p>
+• Developers can make logic changes at the component level, without editing the individual pages that use the application’s logic.</p><p>
+
+</p>
+		 
+		
+			
+				<h6>What are Directives ? What are the different types of Directives available in JSP ? </h6>
+		<p> 
+		Directives are instructions that are processed by the JSP engine, when the page is compiled to a servlet. Directives are used to set page-level instructions, insert data from external files, and specify custom tag libraries. Directives are defined between < %@ and % >. The different types of directives are shown below: 
+</p><p>• Include directive: it is used to include a file and merges the content of the file with the current page. 
+</p><p>• Page directive: it is used to define specific attributes in the JSP page, like error page and buffer. 
+</p><p>• Taglib: it is used to declare a custom tag library which is used in the page. 
+
+		</p>
+		
+		
+	 
+		 	
+				<h6>What are JSP actions ?  </h6>
+		<p>JSP actions use constructs in XML syntax to control the behavior of the servlet engine. JSP actions are executed when a JSP page is requested. They can be dynamically inserted into a file, re-use JavaBeans components, forward the user to another page, or generate HTML for the Java plugin.Some of the available actions are listed below: 
+</p><p>• jsp:include - includes a file, when the JSP page is requested
+.</p><p> • jsp:useBean - finds or instantiates a JavaBean. 
+</p><p>• jsp:setProperty - sets the property of a JavaBean.
+</p><p> • jsp:getProperty - gets the property of a JavaBean.
+</p><p> • jsp:forward - forwards the requester to a new page.
+</p><p>• jsp:plugin - generates browser-specific code. 
+
+</p>
+		
+		
+	 
+	 
+	 
+				<h6>What are Scriptlets ?  </h6>
+		<p>  In Java Server Pages (JSP) technology, a scriptlet is a piece of Java-code embedded in a JSP page. The scriptlet is everything inside the tags. Between these tags, a user can add any valid scriplet. 
+		</p>
+		
+	 
+	 
+	 	
+				<h6>What are Decalarations ?  </h6>
+		<p>Declarations are similar to variable declarations in Java. Declarations are used to declare variables for subsequent use in expressions or scriptlets. To add a declaration, you must use the sequences to enclose your declarations. 
+		</p>
+		
+		
+	
+				<h6> What are Expressions ?</h6>
+		<p>  A JSP expression is used to insert the value of a scripting language expression, converted into a string, into the data stream returned to the client, by the web server. Expressions are defined between tags. 
+		</p>
+		
+				<h6>What is meant by implicit objects and what are they ?  </h6>
+		<p>JSP implicit objects are those Java objects that the JSP Container makes available to developers in each page. A developer can call them directly, without being explicitly declared. JSP Implicit Objects are also called pre-defined variables.The following objects are considered implicit in a JSP page: 
+• application </p><p>
+• page</p><p>
+ • request </p><p>
+• response </p><p>
+• session </p><p>
+• exception </p><p>
+• out </p><p>
+• config</p><p>
+ • pageContext
+	</p>
+		
+				<h6> What are the advantages of JSP over Active Server Pages ASP? </h6>
+		<p>The advantages of JSP are twofold. First, the dynamic part is written in Java, not Visual Basic or other MS specific language, so it is more powerful and easier to use. Second, it is portable to other operating systems and non-Microsoft Web servers. 		</p>
+
+				<h6>What are the advantages of JSP over Pure Servlets? </h6>
+		<p> It is more convenient to write andtomodify! Regular HTML than to have plenty of printing statements that generate the HTML. Other advantages are: Embedding of Java code in HTML pages. Platform independence. Creation of database-driven Web applications. Server-side programming capabilities. 
+		</p>
+
+				<h6> What are the advantages of JSP over Server-Side Includes SSI?</h6>
+		<p> SSI is really only intended for simple inclusions, not for "real" programs that use form data, make database connections, and the like. 	</p>
+
+
+				<h6>What are the advantages of JSP over JavaScript? </h6>
+		<p> JavaScript can generate HTML dynamically on the client but can hardly interact with the web server to perform complex tasks like database access and image processing etc. 	</p>
+
+				<h6>What are the advantages of JSP over Static HTML?  </h6>
+		<p>Regular HTML, of course, cannot contain dynamic information. 
+		</p>
+
+
+				<h6> Explain lifecycle of a JSP.  </h6>
+		<p>A JSP Lifecycle consists of following steps:  </p><p>
+Compilation: </p><p>
+When a browser asks for a JSP, the JSP engine first checks to see whether it needs to compile the page. If the page has never been compiled, or if the JSP has been modified since it was last compiled, the JSP engine compiles the page. 
+ </p><p>The compilation process involves three steps: 
+ </p><p>Parsing the JSP.
+ </p><p> Turning the JSP into a servlet. 
+ </p><p>Compiling the servlet.
+ </p><p> Initialization: 
+ </p><p>When a container loads a JSP it invokes the jspInit method before servicing any requests 
+ </p><p>Execution: 
+ </p><p>Whenever a browser requests a JSP and the page has been loaded and initialized, the JSP engine invokes the _jspService method in the JSP.The _jspService method of a JSP is invoked once per a request and is responsible for generating the response for that request and this method is also responsible for generating responses to all seven of the HTTP methods ie. GET, POST, DELETE etc. 
+ </p><p>Cleanup: 
+ </p><p>The destruction phase of the JSP life cycle represents when a JSP is being removed from use by a container. The jspDestroy method is the JSP equivalent of the destroy method for servlets. 
+	 </p> 
+
+
+
+
+
+		
+	</div>
+</div>
+
+
+
+<script>
+$(function() { $('.tabs nav a').on('click', function() {
+		show_content($(this).index());
+								  });
+																							  
+					 show_content(0);
+
+					  function show_content(index) {
+						// Make the content visible
+									$('.tabs .context.visible').removeClass('visible');
+									$('.tabs .context:nth-of-type(' + (index + 1) + ')').addClass('visible');
+
+									// Set the tab to selected
+									$('.tabs nav.second a.selected').removeClass('selected');
+									$('.tabs navnav.second a:nth-of-type(' + (index + 1) + ')').addClass('selected');
+								  }
+								});
+								</script>
+						
+				</div>
+</div> 
+														
+	<!-- /BREADCRUMB -->
+
+	<!-- section -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /section -->
+
+	<!-- FOOTER -->
+	<footer id="footer" class="section section-grey">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<!-- footer widget -->
+				<div class="col-md-3 col-sm-6 col-xs-6">
+					<div class="footer">
+						<!-- footer logo -->
+						<div class="footer-logo">
+							<a class="logo" href="index1.html">
+		            <img src="./img/ainjlogo.png" alt="">
+		          </a>
+						</div>
+						<!-- /footer logo -->
+
+						<p><b>Head Office:</b> Farate Galli, Behind State Bank of India, Daund, Dist. Pune - 413801, India
+</p>
+						<p><b>Branch Office:</b> Office No. 19, Ground Floor, Aman Prestige, CTS No. 604, Shaniwar Peth, Behind Narayan Peth Police Chowky, Pune-411030, India</p>
+						<p><b>Email:</b> jasitservices313@gmail.com</p>
+						<p><b>Contact:</b> 7720003133/ 7720003134</p>
+
+						
+					</div>
+				</div>
+				<!-- /footer widget -->
+
+				<!-- footer widget -->
+				<div class="col-md-3 col-sm-6 col-xs-6">
+					<div class="footer">
+						<h3 class="footer-header">My Account</h3>
+						<ul class="list-links">
+							<li><a href="#">My Account</a></li>
+							<li><a href="#">My Wishlist</a></li>
+							<li><a href="#">Checkout</a></li>
+							<li><a href="login.html">Login</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- /footer widget -->
+
+				<div class="clearfix visible-sm visible-xs"></div>
+
+				<!-- footer widget -->
+				<div class="col-md-3 col-sm-6 col-xs-6">
+					<div class="footer">
+						<h3 class="footer-header">Customer Service</h3>
+						<ul class="list-links">
+							<li><a href="shipping-return.html">Shipping & Return</a></li>
+							<li><a href="privacy-refund-policy.html">Privacy & Refund Policy</a></li>
+							<li><a href="tnc.html">Terms & Conditions</a></li>
+							<li><a href="faq.html">FAQ</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- /footer widget -->
+
+				<!-- footer subscribe -->
+				<div class="col-md-3 col-sm-6 col-xs-6">
+					<div class="footer">
+						<h3 class="footer-header">Stay Connected</h3>
+						<p>Give us your mail-id and Stay Connected.</p>
+						<form>
+							<div class="form-group">
+								<input class="input" placeholder="Enter Email Address">
+							</div>
+<a href="jasitservices313@gmail.com"><button class="primary-btn">Join Newslatter</button></a>						</form>
+					</div>
+					
+				</div>
+				<!-- /footer subscribe -->
+				<div class="container">
+			<center>	<ul class="footer-social">
+							<li><a href="#"><i class="fa fa-facebook-square fa-3x"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter-square fa-3x"></i></a></li>
+							<li><a href="#"><i class="fa fa-instagram fa-3x"></i></a></li>
+							<li><a href="#"><i class="fa fa-google-plus-square fa-3x"></i></a></li>
+							<li><a href="#"><i class="fa fa-pinterest-square fa-3x"></i></a></li>
+							<li><a href="#"><i class="fa fa-whatsapp fa-3x"></i></a></li> 
+						</ul> </center>
+				
+				</div>
+			</div>
+			<!-- /row -->
+			<hr>
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<!-- footer copyright -->
+					<div class="footer-copyright">
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+																	<p>COPYRIGHT © 2014-2019. ALL RIGHTS RESERVED. DESIGNED BY <a href="http://www.ainj.in/">JAS IT & INFOTECH SERVICES PVT LTD</a></p>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</div>
+					<!-- /footer copyright -->
+				</div>
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</footer>
+	<!-- /FOOTER -->
+
+	<!-- jQuery Plugins -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/nouislider.min.js"></script>
+	<script src="js/jquery.zoom.min.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>

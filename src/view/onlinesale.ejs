@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Online Sale | AINJ IT SERVICES PVT LTD</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<!-- Slick -->
+	<link type="text/css" rel="stylesheet" href="css/slick.css" />
+	<link type="text/css" rel="stylesheet" href="css/slick-theme.css" />
+
+	<!-- nouislider -->
+	<link type="text/css" rel="stylesheet" href="css/nouislider.min.css" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+	
+
+</head>
+
+<body>
+	<!-- HEADER -->
+	<header>
+		<!-- top Header -->
+		<div id="top-header">
+			<div class="container">
+				<div class="pull-left">
+					<span>Welcome to AINJ IT SERVICES PVT LTD!</span>
+				</div>
+				<div class="pull-right">
+					<ul class="header-top-links">
+						
+						<li><a href="#">Newsletter</a></li>
+						<li><a href="faq.html">FAQ</a></li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- /top Header -->
+
+		<!-- header -->
+		<div id="header">
+			<div class="container">
+				<div class="pull-left">
+					<!-- Logo -->
+					<div class="header-logo">
+						<a class="logo" href="index1.html">
+							<img src="./img/ainjlogo.png" alt="">
+						</a>
+					</div>
+					<!-- /Logo -->
+
+					<!-- Search -->
+					<div class="header-search">
+						<form>
+							<input class="input search-input" type="text" placeholder="Enter your keyword">
+							<select class="input search-categories">
+								<option value="0">All Services</option>
+								<option value="1">AINJ IT SERVICES</option>
+								<option value="1">AINJ INFOTECH SERVICES</option>
+								<option value="1">CONSULTANCY</option>
+								<option value="1">DIGITAL MARKETING</option>
+							</select>
+							<button class="search-btn"><i class="fa fa-search"></i></button>
+						</form>
+					</div>
+					<!-- /Search -->
+				</div>
+				<div class="pull-right">
+					<ul class="header-btns">
+						<!-- Account -->
+						<li class="header-account dropdown default-dropdown">
+							<div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+								<div class="header-btns-icon">
+									<i class="fa fa-user-o"></i>
+								</div>
+								<% var showprod %>
+								<% if (session) { %>
+									<strong class="text-uppercase">Welcome <%= session.user %> <i class="fa fa-caret-down"></i></strong>
+								<% } %>
+							</div>
+							<a href="login.html" class="text-uppercase">Login</a> / <a href="signup.html" class="text-uppercase">Join</a>
+							<ul class="custom-menu">
+								<!-- <li><a href="#"><i class="fa fa-user-o"></i> Welcome <%= session.user %></a></li> -->
+								<li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
+								<li><a href="#"><i class="fa fa-check"></i> Checkout</a></li>
+								<li><a href="login.html"><i class="fa fa-unlock-alt"></i> Login</a></li>
+								<li><a href="/logout"><i class="fa fa-unlock-alt"></i> Logout</a></li>
+								<li><a href="signup.html"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+							</ul>
+						</li>
+						<!-- /Account -->
+
+						<!-- Cart -->
+						<li class="header-cart dropdown default-dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+								<div class="header-btns-icon">
+									<i class="fa fa-shopping-cart"></i>
+									<span class="qty">3</span>
+								</div>
+								<strong class="text-uppercase">My Cart:</strong>
+								<br>
+								<span>35.20$</span>
+							</a>
+							<div class="custom-menu">
+								<div id="shopping-cart">
+									<div class="shopping-cart-list">
+										<div class="product product-widget">
+											<div class="product-thumb">
+												<img src="./img/thumb-product01.jpg" alt="">
+											</div>
+											<div class="product-body">
+												<h3 class="product-price">$32.50 <span class="qty">x3</span></h3>
+												<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+											</div>
+											<button class="cancel-btn"><i class="fa fa-trash"></i></button>
+										</div>
+										<div class="product product-widget">
+											<div class="product-thumb">
+												<img src="./img/thumb-product01.jpg" alt="">
+											</div>
+											<div class="product-body">
+												<h3 class="product-price">$32.50 <span class="qty">x3</span></h3>
+												<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+											</div>
+											<button class="cancel-btn"><i class="fa fa-trash"></i></button>
+										</div>
+									</div>
+									<div class="shopping-cart-btns">
+										<button class="main-btn">View Cart</button>
+										<button class="primary-btn">Checkout <i class="fa fa-arrow-circle-right"></i></button>
+									</div>
+								</div>
+							</div>
+						</li>
+						<!-- /Cart -->
+
+						<!-- Mobile nav toggle-->
+						<li class="nav-toggle">
+							<button class="nav-toggle-btn main-btn icon-btn"><i class="fa fa-bars"></i></button>
+						</li>
+						<!-- / Mobile nav toggle -->
+					</ul>
+				</div>
+			</div>
+			<!-- header -->
+		</div>
+		<!-- container -->
+	</header>
+	<!-- /HEADER -->
+
+	<!-- NAVIGATION -->
+	<div id="navigation">
+		<!-- container -->
+		<div class="container">
+			<div id="responsive-nav">
+				<!-- category nav -->
+				<div class="category-nav show-on-click">
+					<span class="category-header">Services <i class="fa fa-list"></i></span>
+					<ul class="category-list">
+						<li class="dropdown side-dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">IT Services <i class="fa fa-angle-right"></i></a>
+							<div class="custom-menu">
+								<div class="row">
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Services</h3></li>
+											<li><a href="/show-prod">Online Sale</a></li>
+											<li><a href="freelancing.html">Freelancing</a></li>
+											<li><a href="/show-freelance-job">View Freelance Jobs</a></li>
+											<li><a href="#">Reseller Hosting</a></li>
+											<li><a href="#">ERP</a></li>
+										<!--	<li><a href="#">Bags & Shoes</a></li> -->
+										</ul>
+										<hr class="hidden-md hidden-lg">
+									</div>
+									
+									
+								</div>
+								
+							</div>
+						</li>
+						
+						<li class="dropdown side-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Infotech Services <i class="fa fa-angle-right"></i></a>
+							<div class="custom-menu">
+								<div class="row">
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Services</h3></li>
+											<li><a href="/show-course">Online Courses</a></li>
+											<li><a href="internshipdetails.html">Online Internship</a></li>
+											<li><a href="/show-colpro">Online College Project</a></li>
+											
+										</ul> 
+										
+										
+									</div>
+									
+									
+								</div>
+							</div>
+						</li>
+						
+						<li class="dropdown side-dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Job Consultancy <i class="fa fa-angle-right"></i></a>
+							<div class="custom-menu">
+								<div class="row">
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Services</h3></li>
+											<li><a href="/show-job">Job Openings</a></li>
+											<li><a href="signup.html">Registration for Online Placement Services</a></li>
+											<li><a href="/show-resumes-cust">Our Services</a></li>
+										</ul>
+										
+										
+										
+									</div>
+									
+									
+								</div>
+							</div>
+						</li>
+						
+						<li class="dropdown side-dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Digital Marketing <i class="fa fa-angle-right"></i></a>
+							<div class="custom-menu">
+								<div class="row">
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li><h3 class="list-links-title">Services</h3></li>
+											<li><a href="/dmpage">Offers</a></li>
+											<li><a href="packages.html">Packages</a></li>
+											
+										
+										</ul>
+										
+										
+										
+									</div>
+									
+									
+								</div>
+							</div>
+						</li>
+						<li><a href="/show-blogs-cust">Blog</a></li>
+						<li><a href="#">SMS</a></li>
+						<li><a href="signup.html">Sign Up</a></li>
+						
+					</ul>
+				</div>
+				<!-- /category nav -->
+
+				<!-- menu nav -->
+				<div class="menu-nav">
+					<span class="menu-header">Menu <i class="fa fa-bars"></i></span>
+					<ul class="menu-list">
+						<li><a href="index1.html">Home</a></li>
+						<li><a href="gallery.html">Gallery</a></li>
+						<li><a href="#">SMS</a></li>
+						<li><a href="/show-blogs-cust">Blog</a></li>
+						<li><a href="contact.html">Contact</a></li>
+						
+						
+					</ul>
+				</div>
+				<!-- menu nav -->
+			</div>
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /NAVIGATION -->
+
+	<!-- BREADCRUMB -->
+	<div id="breadcrumb">
+		<div class="container">
+			<ul class="breadcrumb">
+				<li><a href="index1.html">Home</a></li>
+				<li class="active">Online Sale</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /BREADCRUMB -->
+
+	<!-- section -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+					<div class="row">
+			<h2>Our Products</h2>
+			<!-- pricing -->
+				<div class="col-sm-4">
+					<div class="pricing">
+						<div class="price-head">
+							<span class="price-title">JAS ERP</span>
+							 
+						  <video id="custom_video_play" width="250" controls="controls">>
+<source src="img/ERP.mp4" type="video/mp4"><source src="mov_bbb.flv" type="video/flv"> Browser Not Supporting
+</video> 	 
+						</div>
+						 
+						<div class="price-btn">
+							<button class="primary-btn">85999 Rs/ </button>
+						</div>
+						<a href="#">add to cart</a> &nbsp; &nbsp; &nbsp; &nbsp;   <a href="#section1">view more</a> &nbsp; &nbsp; &nbsp; &nbsp;  <a href="#">Buy now</a>
+					</div>
+				</div>
+				<!-- /pricing -->
+
+				<!-- pricing -->
+				<div class="col-sm-4">
+					<div class="pricing">
+						<div class="price-head">
+							<span class="price-title">JAS Transport</span>
+							 
+					<video id="custom_video_play" width="250" controls="controls">>
+<source src="img/TRANSPORT.mp4" type="video/mp4"><source src="mov_bbb.flv" type="video/flv"> Browser Not Supporting
+</video>  	 
+						</div>
+						 
+						<div class="price-btn">
+							<button class="primary-btn">27999 Rs/-</button>
+						</div>
+						<a href="#">add to cart</a> &nbsp; &nbsp; &nbsp; &nbsp;   <a href="#section2">view more</a> &nbsp; &nbsp; &nbsp; &nbsp;  <a href="#">Buy now</a>
+
+					</div>
+				</div>
+				<!-- /pricing -->
+
+				<!-- pricing -->
+				<div class="col-sm-4">
+					<div class="pricing">
+						<div class="price-head">
+							<span class="price-title">JAS Payroll</span>
+							 <video id="custom_video_play" width="250" controls="controls">
+<source src="img/payroll.mp4" type="video/mp4"><source src="mov_bbb.flv" type="video/flv"> Browser Not Supporting
+</video> 
+						</div>
+						 
+						<div class="price-btn">
+							<button class="primary-btn">34999 Rs/-</button>
+						</div>
+						<a href="#">add to cart</a> &nbsp; &nbsp; &nbsp; &nbsp;   <a href="#section3">view more</a> &nbsp; &nbsp; &nbsp; &nbsp;  <a href="#">Buy now</a>
+
+					</div>
+				</div>
+				<!-- /pricing -->
+
+				
+				
+			</div>
+			<!-- Row -->
+
+			
+			<div class="row">
+
+				<!-- Section header -->
+			 
+				<!-- /Section header -->
+
+				<!-- pricing -->
+				<div class="col-sm-4">
+					<div class="pricing">
+						<div class="price-head">
+							<span class="price-title">Accounting & Billing</span>
+							 
+					<video id="custom_video_play" width="250" controls="controls">>
+<source src="img/billing.mp4" type="video/mp4"><source src="mov_bbb.flv" type="video/flv"> Browser Not Supporting
+</video>
+						</div>
+						 
+						<div class="price-btn">
+							<button class="primary-btn">24999 Rs/-</button>
+						</div>
+						<a href="#">add to cart</a> &nbsp; &nbsp; &nbsp; &nbsp;   <a href="#section4">view more</a> &nbsp; &nbsp; &nbsp; &nbsp;  <a href="#">Buy now</a>
+
+					</div>
+				</div>
+				<!-- /pricing -->
+
+				<!-- pricing -->
+				<div class="col-sm-4">
+					<div class="pricing">
+						<div class="price-head">
+							<span class="price-title">Event Management</span>
+							 
+				   <video id="custom_video_play" width="250" controls="controls">>
+<source src="img/eventmanagement.mp4" type="video/mp4"><source src="mov_bbb.flv" type="video/flv"> Browser Not Supporting
+</video> 
+						</div>
+						 
+						<div class="price-btn">
+							<button class="primary-btn">27999 Rs/-</button>
+						</div>
+						<a href="#">add to cart</a> &nbsp; &nbsp; &nbsp; &nbsp;   <a href="#section5">view more</a> &nbsp; &nbsp; &nbsp; &nbsp;  <a href="#">Buy now</a>
+
+					</div>
+				</div>
+				<!-- /pricing -->
+
+				<!-- pricing -->
+				<div class="col-sm-4">
+					<div class="pricing">
+						<div class="price-head">
+							<span class="price-title">Hotel & Lodge</span>
+							    <video id="custom_video_play" width="250" controls="controls">>
+<source src="img/hotel.mp4" type="video/mp4"><source src="mov_bbb.flv" type="video/flv"> Browser Not Supporting
+</video> 
+						</div>
+					 
+						<div class="price-btn">
+							<button class="primary-btn">45999 Rs/-</button>
+						</div>
+						<a href="#">add to cart</a> &nbsp; &nbsp; &nbsp; &nbsp;   <a href="#section6">view more</a> &nbsp; &nbsp; &nbsp; &nbsp;  <a href="#">Buy now</a>
+
+					</div>
+				</div>
+				<!-- /pricing -->
+
+				
+				
+			</div>
+			
+			
+			
+			<div class="row">
+
+				<!-- Section header -->
+			 
+				<!-- /Section header -->
+
+				<!-- pricing -->
+				<div class="col-sm-4">
+					<div class="pricing">
+						<div class="price-head">
+							<span class="price-title">Tailor & Cloth</span>
+							 
+				  <video id="custom_video_play" width="250" controls="controls">>
+<source src="img/tailor.mp4" type="video/mp4"><source src="mov_bbb.flv" type="video/flv"> Browser Not Supporting
+</video> 
+						</div>
+						 
+						<div class="price-btn">
+							<button class="primary-btn">21999 Rs/-</button>
+						</div>
+						<a href="#">add to cart</a> &nbsp; &nbsp; &nbsp; &nbsp;   <a href="#section7">view more</a> &nbsp; &nbsp; &nbsp; &nbsp;  <a href="#">Buy now</a>
+
+					</div>
+				</div>
+				<!-- /pricing -->
+
+				<!-- pricing -->
+				<div class="col-sm-4">
+					<div class="pricing">
+						<div class="price-head">
+							<span class="price-title">Plant Nursery</span>
+							 
+				    <video id="custom_video_play" width="250" controls="controls">>
+<source src="img/nursery.mp4" type="video/mp4"><source src="mov_bbb.flv" type="video/flv"> Browser Not Supporting
+</video> 
+						</div>
+						 
+						<div class="price-btn">
+							<button class="primary-btn">27999 Rs/-</button>
+						</div>
+						<a href="#">add to cart</a> &nbsp; &nbsp; &nbsp; &nbsp;   <a href="#section8">view more</a> &nbsp; &nbsp; &nbsp; &nbsp;  <a href="#">Buy now</a>
+
+					</div>
+				</div>
+				<!-- /pricing -->
+
+				<!-- pricing -->
+				<div class="col-sm-4">
+					<div class="pricing">
+						<div class="price-head">
+							<span class="price-title">JAS Billing for Marbles shop</span>
+							  <video id="custom_video_play" width="250" controls="controls">>
+<source src="img/laxmi.mp4" type="video/mp4"><source src="mov_bbb.flv" type="video/flv"> Browser Not Supporting
+</video>   
+						</div>
+						 
+						<div class="price-btn">
+							<button class="primary-btn">27999 Rs/-</button>
+						</div>
+						<a href="#">add to cart</a> &nbsp; &nbsp; &nbsp; &nbsp;   <a href="#section9">view more</a> &nbsp; &nbsp; &nbsp; &nbsp;  <a href="#">Buy now</a>
+
+					</div>
+				</div>
+				<!-- /pricing -->
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="pricing">
+						<div class="price-head">
+							<span class="price-title">Hospital Management System & OPD</span>
+							 
+				   <video id="custom_video_play" width="250" controls="controls">>
+<source src="img/HMS.mp4" type="video/mp4"><source src="mov_bbb.flv" type="video/flv"> Browser Not Supporting
+</video>  
+						</div>
+ 
+						<div class="price-btn">
+							<button class="primary-btn">34999 Rs/-</button>
+						</div>
+						<a href="#">add to cart</a> &nbsp; &nbsp; &nbsp; &nbsp;   <a href="#section10">view more</a> &nbsp; &nbsp; &nbsp; &nbsp;  <a href="#">Buy now</a>
+
+					</div>
+				</div>
+
+<div class="col-sm-4">
+			<div class="pricing">
+			<% if (showprod) { %>
+				
+					<% showprod.forEach(function(prod) { %>
+			        	
+			        	
+			        		
+			        		<div class="price-head">
+			        			<span class="price-title"><%= prod.pname %></span>
+			        		</div>
+			        		<video id="custom_video_play" width="250" controls="controls">>
+<source src="<%= prod.file %>" type="video/mp4"><source src="mov_bbb.flv" type="video/flv"> Browser Not Supporting
+</video>  
+			        	<div class="price-btn">
+			        		<button class="primary-btn"><%= prod.pprice %></button>
+			        	</div>
+			        		
+			        		<a href="/add-to-cart/<%= prod.id %>" class="primary-btn"> Buy now</a>
+			        	<br/>
+			        	<br/>
+			    	<% }); %>
+				
+			<% } else { %>
+		        <p class="text-center">Products Not Found.</p>
+		    <% } %>
+		    </div>
+
+		</div>
+
+			</div>
+			<!-- /row -->
+			 
+			<!-- List of job openings come here which is shown to students -->
+			
+
+
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /section -->
+	<div class="container">
+		<h2>Product Description</h2>
+	 <div class="context">
+		<div class="main" id="section1">
+		<h4>JAS ERP</h4>
+		<p><ul class="a"><li>	ERP" stands for enterprise resource planning.Enterprise resource planning (ERP) is business process management software that allows an organization to use a system of integrated applications to manage the business and automate many back office functions related to technology, services and human resources.</li></ul></p>
+																								
+			  </div>
+			  </div>
+			  <div class="context">
+			  <div class="main" id="section2">
+							<h4>JAS TRANSPORT</h4>
+							<p><ul class="a"><li>Jas transport software manage all the transportation business. </li>
+<li>	 JAS TRANSPORT application is a Cloud based System that enables efficient and effective management of Transport/Logistic/Warehouse operations. </li>
+<li>	In JAS TRANSPORT software have multiple modules like home, company profile, master, transit, bank account, user maintenance where user manage all the details about company, transport, online order, challan etc.</li>
+<li>	It makes life easier for your Business.</li>
+</ul>
+</p>
+			  </div>
+			  </div>
+			 <div class="context">
+		   <div class="main" id="section3">
+			<h4>JAS PAYROLL</h4>
+			<p><ul class="a"><li>	JAS PAYROLL application manage all company employee information .By using this software organization HR can easily maintain the employee’s financial records. This would be include employee’s payment, bonus, deduction, incentive and net pay. </li>
+<li>	This software also maintain time and attendance of employee, health report, insurance details. This application save the time or cost-effective and secure.</li>
+</ul>
+</p>
+	 	 </div>
+	 	 </div>
+																							 
+		  <div class="context">
+		  <div class="main" id="section4">
+		<h4>ACCOUNTING & BILLING</h4>
+		<p><ul class="a"><li>	Accounting and billing software maintain business account details securely. Billing software maintain records of product selling, buying, customer information, transportation details, generate pdf invoice of billing, employee details etc. This software save time and cost effective.</li></ul></p>
+	  </div>
+	  </div>
+																							  
+	   <div class="context">
+	  <div class="main" id="section5">
+		<h4>EVENT MANAGEMENT</h4>
+		<p><ul class="a">	<li>Event management software is an event planner's best friend</li>
+<li>	Event management software manage event planning, event place, event in affordable price and all records about event process, customer balance history, list of multiple events and multiple plans about different types of events .</li>
+<li>	it makes  life easier for  management of every events.</li>
+</ul>
+</p>
+	  </div>
+	  </div>
+	  
+	   <div class="context">
+	  <div class="main" id="section6">
+	<h4>HOTEL & LODGE</h4>
+	<p><ul class="a"><li>	This software provide complete control of all operation of hotel.  This software  manage reservation of tables, billing details ,check in and check out details ,monthly expenses, daily expenses, housekeeping details, worker details.</li></ul></p>
+	  </div>
+	  </div>
+																							  
+	   <div class="context">
+	  <div class="main" id="section7">
+		<h4>TAILOR & CLOTH</h4>
+		<p><ul class="a"><li>This software is maintain all details about tailoring. by using this software user can easily save the information about customer cloths measurement of cloth, delivery date price and balance price of customer etc.
+This is perfect software for tailoring business.</li></ul>
+</p>
+	  </div>
+	  </div>
+																							  
+	   <div class="context">
+	  <div class="main" id="section8">
+		<h4>PLANT & NURSARY</h4>
+		<p>This software is very useful for nursery business. This software save all record about all plant available in nursery with price, customer details, filling bags details, delivery challan. This software generate sell invoice in pdf form. This software increase business revenue.</p>
+		  </div>
+		  </div>
+																							  
+	   <div class="context">
+	  <div class="main" id="section9">
+		<h4>JAS BILLING FOR MARBLE SHOP</h4>
+		<p><ul class="a"><li>Billing software of mobile maintain business account details securely. </li>
+<li>	This software save all the brand name of mobile with price.</li>
+<li>	Billing software maintain records of mobile selling, buying, customer information, generate pdf invoice of billing, employee details etc. This software save time and cost effective.</li>
+</ul></p>
+	 </div>
+	 </div>
+																							  
+	  <div class="context">
+  <div class="main" id="section10">
+	<h4>HOSPITAL MANAGEMENT SYSTEM</h4>
+	<p><ul class="a"><li>Hospital Management System and OPD software manages entire Hospital operations. This software save all records about patient, doctors, workers and pharmacy. </li></ul></p>
+	  </div>
+	  </div>
+
+</div>
+
+
+	<!-- FOOTER -->
+	<footer id="footer" class="section section-grey">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<!-- footer widget -->
+				<div class="col-md-3 col-sm-6 col-xs-6">
+					<div class="footer">
+						<!-- footer logo -->
+						<div class="footer-logo">
+							<a class="logo" href="index1.html">
+		            <img src="./img/ainjlogo.png" alt="">
+		          </a>
+						</div>
+						<!-- /footer logo -->
+
+						<p><b>Head Office:</b> Farate Galli, Behind State Bank of India, Daund, Dist. Pune - 413801, India
+</p>
+						<p><b>Branch Office:</b> Office No. 19, Ground Floor, Aman Prestige, CTS No. 604, Shaniwar Peth, Behind Narayan Peth Police Chowky, Pune-411030, India</p>
+						<p><b>Email:</b> jasitservices313@gmail.com</p>
+						<p><b>Contact:</b> 7720003133/ 7720003134</p>
+						
+					</div>
+				</div>
+				<!-- /footer widget -->
+
+				<!-- footer widget -->
+				<div class="col-md-3 col-sm-6 col-xs-6">
+					<div class="footer">
+						<h3 class="footer-header">My Account</h3>
+						<ul class="list-links">
+							<li><a href="#">My Account</a></li>
+							<li><a href="#">My Wishlist</a></li>
+							<li><a href="#">Checkout</a></li>
+							<li><a href="login.html">Login</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- /footer widget -->
+
+				<div class="clearfix visible-sm visible-xs"></div>
+
+				<!-- footer widget -->
+				<div class="col-md-3 col-sm-6 col-xs-6">
+					<div class="footer">
+						<h3 class="footer-header">Customer Service</h3>
+						<ul class="list-links">
+							<li><a href="shipping-return.html">Shipping & Return</a></li>
+							<li><a href="privacy-refund-policy.html">Privacy & Refund Policy</a></li>
+							<li><a href="tnc.html">Terms & Conditions</a></li>
+							<li><a href="faq.html">FAQ</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- /footer widget -->
+
+				<!-- footer subscribe -->
+				<div class="col-md-3 col-sm-6 col-xs-6">
+					<div class="footer">
+						<h3 class="footer-header">Stay Connected</h3>
+						<p>Give us your mail-id and Stay Connected.</p>
+						<form>
+							<div class="form-group">
+								<input class="input" placeholder="Enter Email Address">
+							</div>
+<a href="jasitservices313@gmail.com"><button class="primary-btn">Join Newslatter</button></a>						</form>
+					</div>
+					</br>
+					
+				
+				</div>
+				<!-- /footer subscribe -->
+				<div class="container">
+			<center>	<ul class="footer-social">
+							<li><a href="#"><i class="fa fa-facebook-square fa-3x"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter-square fa-3x"></i></a></li>
+							<li><a href="#"><i class="fa fa-instagram fa-3x"></i></a></li>
+							<li><a href="#"><i class="fa fa-google-plus-square fa-3x"></i></a></li>
+							<li><a href="#"><i class="fa fa-pinterest-square fa-3x"></i></a></li>
+							<li><a href="#"><i class="fa fa-whatsapp fa-3x"></i></a></li> 
+						</ul> </center>
+				
+				</div>
+			</div>
+			<!-- /row -->
+			<hr>
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<!-- footer copyright -->
+					<div class="footer-copyright">
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+																	<p>COPYRIGHT © 2014-2019. ALL RIGHTS RESERVED. DESIGNED BY <a href="http://www.ainj.in/">AINJ IT SERVICES PVT LTD</a></p>
+
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</div>
+					<!-- /footer copyright -->
+				</div>
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</footer>
+	<!-- /FOOTER -->
+
+	<!-- jQuery Plugins -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/nouislider.min.js"></script>
+	<script src="js/jquery.zoom.min.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>
