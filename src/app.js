@@ -69,10 +69,10 @@ app.use(session({
 	  database: "ainj"
 	});
 
-	con.connect(function(err) {
-	  if (err) throw err;
-	  console.log("Database Connected!");
-	})
+	// con.connect(function(err) {
+	//   if (err) throw err;
+	//   console.log("Database Connected!");
+	// })
 
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({
