@@ -61,18 +61,18 @@ app.use(session({
     // }
 }).single('filename')
 
-  var mysql = require('mysql');
-	var con = mysql.createConnection({
-	  host: "localhost",
-	  user: "root",
-	  password: "AINJ@123",
-	  database: "ainj"
-	});
+ //  var mysql = require('mysql');
+	// var con = mysql.createConnection({
+	//   host: "localhost",
+	//   user: "root",
+	//   password: "AINJ@123",
+	//   database: "ainj"
+	// });
 
-	con.connect(function(err) {
-	  if (err) throw err;
-	  console.log("Database Connected!");
-	})
+	// con.connect(function(err) {
+	//   if (err) throw err;
+	//   console.log("Database Connected!");
+	// })
 
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({
