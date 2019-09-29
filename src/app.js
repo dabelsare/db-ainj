@@ -65,7 +65,7 @@ app.use(session({
 	var con = mysql.createConnection({
 	  host: "localhost",
 	  user: "root",
-	  password: "",
+	  password: "AINJ@123",
 	  database: "ainj"
 	});
 
